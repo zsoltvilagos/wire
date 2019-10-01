@@ -40,7 +40,7 @@
     
     
       
-        <title>Close - Wire</title>
+        <title>Cancel - Wire</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#close" tabindex="1" class="md-skip">
+      <a href="#cancel" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Close
+                Cancel
               
             </span>
           
@@ -443,6 +443,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" title="Exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -453,15 +469,18 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/square/wire/edit/master/docs/3.x/wire-runtime/com.squareup.wire/-message-sink/close.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/square/wire/edit/master/docs/3.x/wire-runtime/com.squareup.wire/-message-sink/cancel.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p><a href="../../../">wire-runtime</a> / <a href="../../">com.squareup.wire</a> / <a href="../">MessageSink</a> / <a href="./">close</a></p>
-<h1 id="close">close<a class="headerlink" href="#close" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
+                <p><a href="../../../">wire-runtime</a> / <a href="../../">com.squareup.wire</a> / <a href="../">MessageSink</a> / <a href="./">cancel</a></p>
+<h1 id="cancel">cancel<a class="headerlink" href="#cancel" title="Permanent link">&para;</a></h1>
+<p><code>abstract fun cancel():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
 <p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Terminate the stream and release its resources. If this has not been canceled this signals a
-normal completion of the stream.</p>
+<p>Truncate this stream abnormally. This attempts to signal to readers of this data that it is
+incomplete. Note that unlike some cancel methods this is not safe for concurrent use.</p>
+<p>A stream must be closed after it is canceled.</p>
+<h3 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h3>
+<p><code>IllegalStateException</code> - if this stream is closed.</p>
                 
                   
                 

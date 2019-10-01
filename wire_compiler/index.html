@@ -659,7 +659,7 @@ block in <code>build.gradle</code>:</p>
 <p>The plugin will read the <code>.proto</code> schema definitions, validate them, link them, and generate Kotlin
 code. It uses <a href="https://github.com/square/kotlinpoet">KotlinPoet</a> internally to generate compact and legible source files.</p>
 <p><img alt="Basic" src="../images/gradle_basic@2x.png" /></p>
-<p>Wire will generate files in <code>build/generated/src/main/java</code>. It&rsquo;ll also register this directory as a
+<p>Wire will generate files in <code>build/generated/source/wire</code>. It&rsquo;ll also register this directory as a
 source directory for the project so the generated sources are compiled by the Kotlin compiler.</p>
 <p>Replace <code>kotlin</code> with <code>java</code> to generate Java sources instead.</p>
 <h2 id="inputs-and-outputs">Inputs and Outputs<a class="headerlink" href="#inputs-and-outputs" title="Permanent link">&para;</a></h2>
@@ -836,7 +836,8 @@ all references to them.</p>
 </pre></div>
 
 <h3 id="kotlin">Kotlin<a class="headerlink" href="#kotlin" title="Permanent link">&para;</a></h3>
-<p>Here&rsquo;s an exhaustive Kotlin configuration. Booleans are shown with their non-default behavior.</p>
+<p>Here&rsquo;s an exhaustive Kotlin configuration. Booleans and enums are shown with their non-default
+behavior.</p>
 <div class="codehilite"><pre><span></span><span class="n">wire</span> <span class="o">{</span>
   <span class="n">kotlin</span> <span class="o">{</span>
     <span class="c1">// Proto types to include generated sources for. Types listed here will be</span>
@@ -868,8 +869,13 @@ all references to them.</p>
     <span class="c1">// target.</span>
     <span class="n">javaInterop</span> <span class="o">=</span> <span class="kc">true</span>
 
-    <span class="c1">// True for emitted services to provide blocking APIs only.</span>
-    <span class="n">blockingServices</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="c1">// `suspending` to generate coroutines APIs that require a Kotlin coroutines context.</span>
+    <span class="c1">// `blocking` to generate blocking APIs callable by Java and Kotlin.</span>
+    <span class="n">rpcCallStyle</span> <span class="o">=</span> <span class="s1">&#39;blocking&#39;</span>
+
+    <span class="c1">// `client` to generate interfaces best suited to sending outbound calls.</span>
+    <span class="c1">// `server` to generate interfaces best suited to receiving inbound calls.</span>
+    <span class="n">rpcRole</span> <span class="o">=</span> <span class="s1">&#39;server&#39;</span>
 
     <span class="c1">// True for emitted services to implement one interface per RPC.</span>
     <span class="n">singleMethodServices</span> <span class="o">=</span> <span class="kc">true</span>

@@ -482,6 +482,15 @@
                 <p><a href="../../">wire-runtime</a> / <a href="../">com.squareup.wire</a> / <a href="./">WireRpc</a></p>
 <h1 id="wirerpc">WireRpc<a class="headerlink" href="#wirerpc" title="Permanent link">&para;</a></h1>
 <p><code>@Target([AnnotationTarget.FUNCTION]) annotation class WireRpc</code></p>
+<p>For gRPC actions the path is formatted as <code>/&lt;service name&gt;/&lt;method name&gt;</code>. The path of the proto
+service below is <code>/squareup.helloworld.Greeter/SayHello</code>.</p>
+<div class="codehilite"><pre><span></span>package squareup.helloworld;
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+</pre></div>
+
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -493,7 +502,7 @@
 <tbody>
 <tr>
 <td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>WireRpc(path:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, requestAdapter:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, responseAdapter:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>)</code></td>
+<td><code>WireRpc(path:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, requestAdapter:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, responseAdapter:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>)</code><br>For gRPC actions the path is formatted as <code>/&lt;service name&gt;/&lt;method name&gt;</code>. The path of the proto service below is <code>/squareup.helloworld.Greeter/SayHello</code>.</td>
 </tr>
 </tbody>
 </table>

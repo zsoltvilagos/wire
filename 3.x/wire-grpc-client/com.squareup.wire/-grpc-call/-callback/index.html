@@ -40,7 +40,7 @@
     
     
       
-        <title>Close - Wire</title>
+        <title>Wire</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#close" tabindex="1" class="md-skip">
+      <a href="#callback" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Close
+                Home
               
             </span>
           
@@ -283,7 +283,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../wire-grpc-client/com.squareup.wire/" title="wire-grpc-client" class="md-nav__link">
+    <a href="../../" title="wire-grpc-client" class="md-nav__link">
       wire-grpc-client
     </a>
   </li>
@@ -307,7 +307,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="wire-runtime" class="md-nav__link">
+    <a href="../../../../wire-runtime/com.squareup.wire/" title="wire-runtime" class="md-nav__link">
       wire-runtime
     </a>
   </li>
@@ -443,6 +443,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" title="Functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -453,15 +469,31 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/square/wire/edit/master/docs/3.x/wire-runtime/com.squareup.wire/-message-sink/close.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/square/wire/edit/master/docs/3.x/wire-grpc-client/com.squareup.wire/-grpc-call/-callback/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p><a href="../../../">wire-runtime</a> / <a href="../../">com.squareup.wire</a> / <a href="../">MessageSink</a> / <a href="./">close</a></p>
-<h1 id="close">close<a class="headerlink" href="#close" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Terminate the stream and release its resources. If this has not been canceled this signals a
-normal completion of the stream.</p>
+                <p><a href="../../../">wire-grpc-client</a> / <a href="../../">com.squareup.wire</a> / <a href="../">GrpcCall</a> / <a href="./">Callback</a></p>
+<h1 id="callback">Callback<a class="headerlink" href="#callback" title="Permanent link">&para;</a></h1>
+<p><code>interface Callback&lt;S :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>, R :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code></p>
+<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="on-failure/">onFailure</a></td>
+<td><code>abstract fun onFailure(call:</code><a href="../"><code>GrpcCall</code></a><code>&lt;</code><a href="./#S"><code>S</code></a><code>,</code><a href="./#R"><code>R</code></a><code>&gt;, exception:</code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html"><code>IOException</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
+</tr>
+<tr>
+<td><a href="on-success/">onSuccess</a></td>
+<td><code>abstract fun onSuccess(call:</code><a href="../"><code>GrpcCall</code></a><code>&lt;</code><a href="./#S"><code>S</code></a><code>,</code><a href="./#R"><code>R</code></a><code>&gt;, response:</code><a href="./#R"><code>R</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
