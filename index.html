@@ -276,6 +276,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wire-grpc" title="Wire gRPC" class="md-nav__link">
+    Wire gRPC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generating-code-with-wire" title="Generating Code With Wire" class="md-nav__link">
     Generating Code With Wire
   </a>
@@ -345,6 +352,18 @@
 
 
   <li class="md-nav__item">
+    <a href="wire_grpc/" title="gRPC" class="md-nav__link">
+      gRPC
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="https://stackoverflow.com/questions/tagged/wire?sort=active" title="Stack Overflow ⏏" class="md-nav__link">
       Stack Overflow ⏏
     </a>
@@ -358,13 +377,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       3.x API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         3.x API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -418,13 +437,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       2.x API
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         2.x API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -507,18 +526,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="https://www.grpc.io/docs/guides/" title="gRPC ⏏" class="md-nav__link">
-      gRPC ⏏
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -556,6 +563,13 @@
         <li class="md-nav__item">
   <a href="#wire-kotlin" title="Wire Kotlin" class="md-nav__link">
     Wire Kotlin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wire-grpc" title="Wire gRPC" class="md-nav__link">
+    Wire gRPC
   </a>
   
 </li>
@@ -1083,6 +1097,8 @@ how we used Kotlin to model Protocol Buffers messages:</p>
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;Here are some photos of ${stegosaurus.name}: ${stegosaurus.picture_urls}&quot;</span><span class="p">)</span>
 </pre></div>
 
+<h2 id="wire-grpc">Wire gRPC<a class="headerlink" href="#wire-grpc" title="Permanent link">&para;</a></h2>
+<p>Since version 3.0.0, Wire supports <a href="wire_grpc">gRPC</a>.</p>
 <h2 id="generating-code-with-wire">Generating Code With Wire<a class="headerlink" href="#generating-code-with-wire" title="Permanent link">&para;</a></h2>
 <p>Wire&rsquo;s compiler is available via a Maven plugin. Put <code>.proto</code> sources in your project&rsquo;s
 <code>src/main/proto</code> directory, then use the plugin to generate <code>.java</code> files. The plugin will
@@ -1158,12 +1174,12 @@ that use Wire-generated code.</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>com.squareup.wire<span class="nt">&lt;/groupId&gt;</span>
   <span class="nt">&lt;artifactId&gt;</span>wire-runtime<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>3.0.0-rc01<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;version&gt;</span>3.0.0-rc02<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 
 <p>With Gradle:</p>
-<div class="codehilite"><pre><span></span><span class="n">api</span> <span class="s1">&#39;com.squareup.wire:wire-runtime:3.0.0-rc01&#39;</span>
+<div class="codehilite"><pre><span></span><span class="n">api</span> <span class="s1">&#39;com.squareup.wire:wire-runtime:3.0.0-rc02&#39;</span>
 </pre></div>
 
 <p>Snapshots of the development version are available in <a href="https://oss.sonatype.org/content/repositories/snapshots/">Sonatype&rsquo;s <code>snapshots</code> repository</a>.</p>
