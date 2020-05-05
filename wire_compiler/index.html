@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -291,6 +291,19 @@
   <a href="#pruning" class="md-nav__link">
     Pruning
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-matching" class="md-nav__link">
+    Version Matching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -565,6 +578,19 @@
     Pruning
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-matching" class="md-nav__link">
+    Version Matching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -809,6 +835,35 @@ all references to them.</p>
 <span class="o">}</span>
 </pre></div>
 
+<h3 id="version-matching">Version Matching<a class="headerlink" href="#version-matching" title="Permanent link">&para;</a></h3>
+<p>Another way to prune obsolete fields is to assign them a version, then to generate your code
+against a version range or a unique version. The fields out of the version range will get pruned.</p>
+<p>Members, or enum constants, may be declared with <code>wire.since</code> and <code>wire.until</code> options. For example,
+these options declare a field <code>age</code> that was replaced with <code>birth_date</code> in version &ldquo;5.0&rdquo;:</p>
+<div class="codehilite"><pre><span></span><span class="k">import</span> <span class="s">&quot;wire/extensions.proto&quot;</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Singer</span> <span class="p">{</span>
+  <span class="k">optional</span> <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">optional</span> <span class="kt">int32</span> <span class="na">age</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">[(</span><span class="n">wire.until</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;5.0&quot;</span><span class="p">];</span>
+  <span class="k">optional</span> <span class="n">Date</span> <span class="na">birth_date</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">[(</span><span class="n">wire.since</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;5.0&quot;</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Client code should typically target a single version. In this example, clients will have the
+<code>name</code> and <code>birth_date</code> fields only.</p>
+<div class="codehilite"><pre><span></span><span class="n">wire</span> <span class="o">{</span>
+  <span class="n">onlyVersion</span> <span class="s2">&quot;5.0&quot;</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>Service code that supports many clients should support the union of versions of all supported
+clients. Such code will have <code>name</code>, as well as both the <code>age</code> and <code>birth_date</code> fields.</p>
+<div class="codehilite"><pre><span></span><span class="n">wire</span> <span class="o">{</span>
+  <span class="n">sinceVersion</span> <span class="s2">&quot;3.0&quot;</span>
+  <span class="n">untilVersion</span> <span class="s2">&quot;6.0&quot;</span>
+<span class="o">}</span>
+</pre></div>
+
 <h2 id="customizing-output">Customizing Output<a class="headerlink" href="#customizing-output" title="Permanent link">&para;</a></h2>
 <h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
 <p>Here&rsquo;s an exhaustive Java configuration. Booleans are shown with their non-default behavior.</p>
@@ -911,7 +966,6 @@ all types, all services, and all extensions of the schema.</p>
                 
                   
                 
-                
               
               
                 
@@ -982,7 +1036,7 @@ all types, all services, and all extensions of the schema.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

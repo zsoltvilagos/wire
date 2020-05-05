@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -454,6 +454,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#functions" class="md-nav__link">
     Functions
   </a>
@@ -481,7 +488,8 @@
                 
                 <p><a href="../../">wire-grpc-client</a> / <a href="../">com.squareup.wire</a> / <a href="./">GrpcClient</a></p>
 <h1 id="grpcclient">GrpcClient<a class="headerlink" href="#grpcclient" title="Permanent link">&para;</a></h1>
-<p><code>class GrpcClient</code></p>
+<p><code>expect class GrpcClient</code></p>
+<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
 <h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -492,8 +500,23 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-builder/">Builder</a></td>
+<td><a href="-builder/">Builder</a><br>(JVM)</td>
 <td><code>class Builder</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="-init-/">&lt;init&gt;</a><br>(js, native)</td>
+<td><code>GrpcClient()</code></td>
 </tr>
 </tbody>
 </table>
@@ -507,14 +530,21 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="create/">create</a></td>
-<td><code>fun &lt;T : Service&gt; create(service:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;</code><a href="create/#T"><code>T</code></a><code>&gt;):</code><a href="create/#T"><code>T</code></a></td>
+<td><a href="create/">create</a><br>(JVM)</td>
+<td><code>fun &lt;T&gt; create():</code><a href="create/#T"><code>T</code></a><br>Returns a <a href="create/#T">T</a> that makes gRPC calls using this client.<code>fun &lt;T&gt; create(service:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;</code><a href="create/#T"><code>T</code></a><code>&gt;):</code><a href="create/#T"><code>T</code></a><br>Returns a <a href="create/#com.squareup.wire.GrpcClient$create(kotlin.reflect.KClass((com.squareup.wire.GrpcClient.create.T)))/service">service</a> that makes gRPC calls using this client.</td>
+</tr>
+<tr>
+<td><a href="new-call/">newCall</a></td>
+<td><code>fun &lt;S :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>, R :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; newCall(method:</code><a href="../-grpc-method/"><code>GrpcMethod</code></a><code>&lt;</code><a href="new-call/#S"><code>S</code></a><code>,</code><a href="new-call/#R"><code>R</code></a><code>&gt;):</code><a href="../-grpc-call/"><code>GrpcCall</code></a><code>&lt;</code><a href="new-call/#S"><code>S</code></a><code>,</code><a href="new-call/#R"><code>R</code></a><code>&gt;</code><br><code>actual fun &lt;S :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>, R :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; newCall(method: &lt;ERROR CLASS&gt;&lt;</code><a href="new-call/#S"><code>S</code></a><code>,</code><a href="new-call/#R"><code>R</code></a><code>&gt;): &lt;ERROR CLASS&gt;&lt;</code><a href="new-call/#S"><code>S</code></a><code>,</code><a href="new-call/#R"><code>R</code></a><code>&gt;</code></td>
+</tr>
+<tr>
+<td><a href="new-streaming-call/">newStreamingCall</a></td>
+<td><code>fun &lt;S :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>, R :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; newStreamingCall(method:</code><a href="../-grpc-method/"><code>GrpcMethod</code></a><code>&lt;</code><a href="new-streaming-call/#S"><code>S</code></a><code>,</code><a href="new-streaming-call/#R"><code>R</code></a><code>&gt;):</code><a href="../-grpc-streaming-call/"><code>GrpcStreamingCall</code></a><code>&lt;</code><a href="new-streaming-call/#S"><code>S</code></a><code>,</code><a href="new-streaming-call/#R"><code>R</code></a><code>&gt;</code><br><code>actual fun &lt;S :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>, R :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; newStreamingCall(method: &lt;ERROR CLASS&gt;&lt;</code><a href="new-streaming-call/#S"><code>S</code></a><code>,</code><a href="new-streaming-call/#R"><code>R</code></a><code>&gt;): &lt;ERROR CLASS&gt;&lt;</code><a href="new-streaming-call/#S"><code>S</code></a><code>,</code><a href="new-streaming-call/#R"><code>R</code></a><code>&gt;</code></td>
 </tr>
 </tbody>
 </table>
                 
                   
-                
                 
               
               
@@ -551,7 +581,7 @@
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       

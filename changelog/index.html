@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -409,6 +409,20 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-321" class="md-nav__link">
+    Version 3.2.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-320" class="md-nav__link">
+    Version 3.2.0
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#version-310" class="md-nav__link">
@@ -825,6 +839,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-321" class="md-nav__link">
+    Version 3.2.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-320" class="md-nav__link">
+    Version 3.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-310" class="md-nav__link">
     Version 3.1.0
   </a>
@@ -1191,8 +1219,31 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-321">Version 3.2.1<a class="headerlink" href="#version-321" title="Permanent link">&para;</a></h2>
+<p><em>2020-05-02</em></p>
+<ul>
+<li>New: <code>onlyVersion</code> option on the Wire Gradle plugin to target a unique version. By and large,
+   service code that supports many clients would target ranges via <code>sinceVersion</code> and
+   <code>untilVersion</code>, while client code would target a unique version via <code>onlyVersion</code>.</li>
+<li>New: Support for optional fields in Proto3.</li>
+<li>Fix: Restored the <code>GrpcClient.create</code> API to create implementations for gRPC interfaces.</li>
+</ul>
+<h2 id="version-320">Version 3.2.0<a class="headerlink" href="#version-320" title="Permanent link">&para;</a></h2>
+<p><em>2020-04-23</em></p>
+<ul>
+<li>New: <code>wire.since</code> and <code>wire.until</code> options on members and enum values. You can prune fields or
+   constants using these two options. When generating code with the Wire Gradle plugin, define
+   <code>sinceVersion</code> and/or <code>untilVersion</code> to scope the generated code.</li>
+<li>New: Messages&rsquo; <code>toString</code> method on Kotlin and Java now escape string values for easy parsing.</li>
+<li>Fix: Link the entire <code>descriptor.proto</code> every time when building the <code>Schema</code>.</li>
+<li>Fix: Properly handle members named after keywords of the target language for both Java and
+   Kotlin.</li>
+<li>Fix: Use the declared name for keys in JSON when emitting/reading keyword named members.</li>
+<li>Fix: Generated Kotlin code is malformed for long identifiers.</li>
+<li>Fix: Make the Wire Gradle plugin compatible with instant execution.</li>
+</ul>
 <h2 id="version-310">Version 3.1.0<a class="headerlink" href="#version-310" title="Permanent link">&para;</a></h2>
-<p><em>2019-02-06</em></p>
+<p><em>2020-02-06</em></p>
 <p>This release includes major non-backwards-compatible API changes to the <code>wire-schema</code> module. This
 will break tools that use Wire&rsquo;s schema modeling as a standalone library. We are making big changes
 to this component and we sacrificed API compatibility to accelerate these improvements.</p>
@@ -1746,7 +1797,6 @@ no longer need a <code>Wire</code> instance!</p>
                 
                   
                 
-                
               
               
                 
@@ -1817,7 +1867,7 @@ no longer need a <code>Wire</code> instance!</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

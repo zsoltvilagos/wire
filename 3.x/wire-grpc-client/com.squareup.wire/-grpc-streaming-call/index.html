@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -514,7 +514,7 @@ works at your call site: the bytes transmitted on the network are the same.</p>
 <tbody>
 <tr>
 <td><a href="timeout/">timeout</a></td>
-<td><code>abstract val timeout: Timeout</code><br>Configures how long the call can take to complete before it is automatically canceled. The timeout applies to the full set of messages transmitted. For long-running streams you must configure a sufficiently long timeout.</td>
+<td><code>abstract val timeout: &lt;ERROR CLASS&gt;</code><br>Configures how long the call can take to complete before it is automatically canceled. The timeout applies to the full set of messages transmitted. For long-running streams you must configure a sufficiently long timeout.</td>
 </tr>
 </tbody>
 </table>
@@ -529,7 +529,7 @@ works at your call site: the bytes transmitted on the network are the same.</p>
 <tbody>
 <tr>
 <td><a href="cancel/">cancel</a></td>
-<td><code>abstract fun cancel():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Attempts to cancel the call. This function is safe to call concurrently with execution. When canceled, execution fails with an immediate <a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html">IOException</a> rather than waiting to complete normally.</td>
+<td><code>abstract fun cancel():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Attempts to cancel the call. This function is safe to call concurrently with execution. When canceled, execution fails with an immediate <a href="#">IOException</a> rather than waiting to complete normally.</td>
 </tr>
 <tr>
 <td><a href="clone/">clone</a></td>
@@ -537,11 +537,11 @@ works at your call site: the bytes transmitted on the network are the same.</p>
 </tr>
 <tr>
 <td><a href="execute/">execute</a></td>
-<td><code>abstract fun execute():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><code>Pair</code></a><code>&lt;SendChannel&lt;</code><a href="./#S"><code>S</code></a><code>&gt;, ReceiveChannel&lt;</code><a href="./#R"><code>R</code></a><code>&gt;&gt;</code><br>Enqueues this call for execution and returns channels to send and receive the call&rsquo;s messages. This uses the <a href="#">Dispatchers.IO</a> to transmit outbound messages.</td>
+<td><code>abstract fun execute(): &lt;ERROR CLASS&gt;&lt;&lt;ERROR CLASS&gt;&lt;</code><a href="./#S"><code>S</code></a><code>&gt;, &lt;ERROR CLASS&gt;&lt;</code><a href="./#R"><code>R</code></a><code>&gt;&gt;</code><br>Enqueues this call for execution and returns channels to send and receive the call&rsquo;s messages. This uses the <a href="#">Dispatchers.IO</a> to transmit outbound messages.</td>
 </tr>
 <tr>
 <td><a href="execute-blocking/">executeBlocking</a></td>
-<td><code>abstract fun executeBlocking():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><code>Pair</code></a><code>&lt;MessageSink&lt;</code><a href="./#S"><code>S</code></a><code>&gt;, MessageSource&lt;</code><a href="./#R"><code>R</code></a><code>&gt;&gt;</code><br>Enqueues this call for execution and returns streams to send and receive the call&rsquo;s messages. Reads and writes on the returned streams are blocking.</td>
+<td><code>abstract fun executeBlocking(): &lt;ERROR CLASS&gt;&lt;&lt;ERROR CLASS&gt;&lt;</code><a href="./#S"><code>S</code></a><code>&gt;, &lt;ERROR CLASS&gt;&lt;</code><a href="./#R"><code>R</code></a><code>&gt;&gt;</code><br>Enqueues this call for execution and returns streams to send and receive the call&rsquo;s messages. Reads and writes on the returned streams are blocking.</td>
 </tr>
 <tr>
 <td><a href="is-canceled/">isCanceled</a></td>
@@ -555,7 +555,6 @@ works at your call site: the bytes transmitted on the network are the same.</p>
 </table>
                 
                   
-                
                 
               
               
@@ -592,7 +591,7 @@ works at your call site: the bytes transmitted on the network are the same.</p>
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       

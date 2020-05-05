@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -572,6 +572,10 @@
 <td><code>fun encode(sink: &lt;ERROR CLASS&gt;):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br><code>fun encode(stream:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><code>OutputStream</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Encode this message and write it to <code>stream</code>.<code>fun encode():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><br>Encode this message as a <code>byte[]</code>.</td>
 </tr>
 <tr>
+<td><a href="encode-byte-string/">encodeByteString</a></td>
+<td><code>fun encodeByteString(): &lt;ERROR CLASS&gt;</code><br>Encode this message as a <code>ByteString</code>.</td>
+</tr>
+<tr>
 <td><a href="new-builder/">newBuilder</a></td>
 <td><code>abstract fun newBuilder():</code><a href="./#B"><code>B</code></a><br>Returns a new builder initialized with the data in this message.</td>
 </tr>
@@ -602,11 +606,14 @@
 <td><a href="../-android-message/">AndroidMessage</a><br>(JVM)</td>
 <td><code>abstract class AndroidMessage&lt;M :</code><a href="./"><code>Message</code></a><code>&lt;</code><a href="../-android-message/#M"><code>M</code></a><code>,</code><a href="../-android-message/#B"><code>B</code></a><code>&gt;, B :</code><a href="-builder/"><code>Builder</code></a><code>&lt;</code><a href="../-android-message/#M"><code>M</code></a><code>,</code><a href="../-android-message/#B"><code>B</code></a><code>&gt;&gt; :</code><a href="./"><code>Message</code></a><code>&lt;</code><a href="../-android-message/#M"><code>M</code></a><code>,</code><a href="../-android-message/#B"><code>B</code></a><code>&gt;</code><br>An Android-specific <a href="./">Message</a> which adds support for <a href="#">Parcelable</a>.</td>
 </tr>
+<tr>
+<td><a href="../-any-message/">AnyMessage</a></td>
+<td><code>class AnyMessage :</code><a href="./"><code>Message</code></a><code>&lt;</code><a href="../-any-message/"><code>AnyMessage</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html"><code>Nothing</code></a><code>&gt;</code><br>TODO(oldergod): documentation TODO(oldergod): JSON</td>
+</tr>
 </tbody>
 </table>
                 
                   
-                
                 
               
               
@@ -643,7 +650,7 @@
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       

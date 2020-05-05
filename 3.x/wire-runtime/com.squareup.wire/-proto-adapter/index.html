@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -544,7 +544,7 @@
 <tbody>
 <tr>
 <td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>ProtoAdapter(fieldEncoding:</code><a href="../-field-encoding/"><code>FieldEncoding</code></a><code>, type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;?)</code><br><code>ProtoAdapter(fieldEncoding: &lt;ERROR CLASS&gt;, type:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;)</code><br><code>ProtoAdapter(actual fieldEncoding: &lt;ERROR CLASS&gt;, actual type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;?)</code></td>
+<td><code>ProtoAdapter(fieldEncoding:</code><a href="../-field-encoding/"><code>FieldEncoding</code></a><code>, type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;?, typeUrl:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?)</code><br><code>ProtoAdapter(fieldEncoding: &lt;ERROR CLASS&gt;, type:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;)</code><br><code>ProtoAdapter(fieldEncoding: &lt;ERROR CLASS&gt;, type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;?)</code><br><code>ProtoAdapter(fieldEncoding: &lt;ERROR CLASS&gt;, type:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, typeUrl:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?)</code><br><code>ProtoAdapter(actual fieldEncoding: &lt;ERROR CLASS&gt;, actual type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;?, actual typeUrl:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?)</code></td>
 </tr>
 </tbody>
 </table>
@@ -560,6 +560,10 @@
 <tr>
 <td><a href="type/">type</a></td>
 <td><code>val type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;?</code></td>
+</tr>
+<tr>
+<td><a href="type-url/">typeUrl</a></td>
+<td><code>val typeUrl:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?</code><br>Identifies this type for inclusion in a <code>google.protobuf.Any</code>. This is a string like &ldquo;type.googleapis.com/packagename.messagename&rdquo; or null if this type is either not a message (such as scalars and enums), or was code-generated before Wire 3.2 which introduced support for type URLS.</td>
 </tr>
 </tbody>
 </table>
@@ -587,6 +591,10 @@
 <tr>
 <td><a href="encode/">encode</a></td>
 <td><code>abstract fun encode(writer:</code><a href="../-proto-writer/"><code>ProtoWriter</code></a><code>, value:</code><a href="./#E"><code>E</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Write non-null <code>value</code> to <code>writer</code>.<code>fun encode(sink: &lt;ERROR CLASS&gt;, value:</code><a href="./#E"><code>E</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Encode <code>value</code> and write it to <code>stream</code>.<code>fun encode(value:</code><a href="./#E"><code>E</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><br>Encode <code>value</code> as a <code>byte[]</code>.<code>fun encode(stream:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><code>OutputStream</code></a><code>, value:</code><a href="./#E"><code>E</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
+</tr>
+<tr>
+<td><a href="encode-byte-string/">encodeByteString</a></td>
+<td><code>fun encodeByteString(value:</code><a href="./#E"><code>E</code></a><code>): &lt;ERROR CLASS&gt;</code><br>Encode <code>value</code> as a <a href="#">ByteString</a>.</td>
 </tr>
 <tr>
 <td><a href="encode-with-tag/">encodeWithTag</a></td>
@@ -704,7 +712,7 @@
 </tr>
 <tr>
 <td><a href="new-message-adapter/">newMessageAdapter</a><br>(JVM)</td>
-<td><code>fun &lt;M :</code><a href="../-message/"><code>Message</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>,</code><a href="new-message-adapter/#B"><code>B</code></a><code>&gt;, B :</code><a href="../-message/-builder/"><code>Builder</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>,</code><a href="new-message-adapter/#B"><code>B</code></a><code>&gt;&gt; newMessageAdapter(type:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>&gt;):</code><a href="./"><code>ProtoAdapter</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>&gt;</code><br>Creates a new proto adapter for <code>type</code>.</td>
+<td><code>fun &lt;M :</code><a href="../-message/"><code>Message</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>,</code><a href="new-message-adapter/#B"><code>B</code></a><code>&gt;, B :</code><a href="../-message/-builder/"><code>Builder</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>,</code><a href="new-message-adapter/#B"><code>B</code></a><code>&gt;&gt; newMessageAdapter(type:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>&gt;):</code><a href="./"><code>ProtoAdapter</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>&gt;</code><br><code>fun &lt;M :</code><a href="../-message/"><code>Message</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>,</code><a href="new-message-adapter/#B"><code>B</code></a><code>&gt;, B :</code><a href="../-message/-builder/"><code>Builder</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>,</code><a href="new-message-adapter/#B"><code>B</code></a><code>&gt;&gt; newMessageAdapter(type:</code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>&gt;, typeUrl:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="./"><code>ProtoAdapter</code></a><code>&lt;</code><a href="new-message-adapter/#M"><code>M</code></a><code>&gt;</code><br>Creates a new proto adapter for <code>type</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -725,7 +733,6 @@
 </table>
                 
                   
-                
                 
               
               
@@ -762,7 +769,7 @@
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       

@@ -1,4 +1,12 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
-
+$dokka.location:com.squareup.wire.GrpcHeaderscom.squareup.wire/-grpc-headers/index.md
+$dokka.location:com.squareup.wire.GrpcHeaders$get(kotlin.String)com.squareup.wire/-grpc-headers/-grpc-headers/get.md
+$dokka.location:com.squareup.wire.GrpcResponsecom.squareup.wire/-grpc-response/index.md
+$dokka.location:com.squareup.wire.GrpcResponse$bodycom.squareup.wire/-grpc-response/-grpc-response/body.md
+$dokka.location:com.squareup.wire.GrpcResponse$close()com.squareup.wire/-grpc-response/-grpc-response/close.md
+$dokka.location:com.squareup.wire.GrpcResponse$header(kotlin.String, kotlin.String)com.squareup.wire/-grpc-response/-grpc-response/header.md
+$dokka.location:com.squareup.wire.GrpcResponse$trailers()com.squareup.wire/-grpc-response/-grpc-response/trailers.md
+$dokka.location:com.squareup.wire.GrpcResponseBodycom.squareup.wire/-grpc-response-body/index.md
+$dokka.location:com.squareup.wire.GrpcResponseBody$source()com.squareup.wire/-grpc-response-body/-grpc-response-body/source.md
 com.squareup.wire
