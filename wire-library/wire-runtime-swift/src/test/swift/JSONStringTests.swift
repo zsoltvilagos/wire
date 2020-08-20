@@ -31,6 +31,12 @@ final class JsonStringTests: XCTestCase {
     }
 
     func testSupportedTypes() throws {
+        // JSONEncoder.OutputFormatting.sortedKeys is only available in iOS 11+
+        // Due to a bug in CocoaPods we can't use a higher minimum version for
+        // tests than we do in the main library, so instead conditionally run this
+        // test when using a newer SDK.
+        guard #available(iOS 11, *) else { return }
+
         let expectedStruct = SupportedTypes(
             a: -12,
             b: 13,

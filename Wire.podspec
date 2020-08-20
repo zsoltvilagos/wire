@@ -22,9 +22,6 @@ Pod::Spec.new do |s|
   CMD
 
   s.test_spec do |test_spec|
-    test_spec.ios.deployment_target  = '11.0'
-    test_spec.osx.deployment_target  = '10.15'
-
     test_spec.script_phase = {
       :name => 'Compile Test Protos',
       :execution_position => :before_compile,
