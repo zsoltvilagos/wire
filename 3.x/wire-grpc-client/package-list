@@ -1,7 +1,17 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
+$dokka.location:com.squareup.wire$toHttpUrl(kotlin.String)com.squareup.wire/kotlin.-string/to-http-url.md
 $dokka.location:com.squareup.wire.GrpcHeaderscom.squareup.wire/-grpc-headers/index.md
 $dokka.location:com.squareup.wire.GrpcHeaders$get(kotlin.String)com.squareup.wire/-grpc-headers/-grpc-headers/get.md
+$dokka.location:com.squareup.wire.GrpcHttpUrlcom.squareup.wire/-grpc-http-url/index.md
+$dokka.location:com.squareup.wire.GrpcHttpUrl$resolve(kotlin.String)com.squareup.wire/-grpc-http-url/-grpc-http-url/resolve.md
+$dokka.location:com.squareup.wire.GrpcRequestcom.squareup.wire/-grpc-request/index.md
+$dokka.location:com.squareup.wire.GrpcRequestBodycom.squareup.wire/-grpc-request-body/index.md
+$dokka.location:com.squareup.wire.GrpcRequestBuildercom.squareup.wire/-grpc-request-builder/index.md
+$dokka.location:com.squareup.wire.GrpcRequestBuilder$addHeader(kotlin.String, kotlin.String)com.squareup.wire/-grpc-request-builder/-grpc-request-builder/add-header.md
+$dokka.location:com.squareup.wire.GrpcRequestBuilder$build()com.squareup.wire/-grpc-request-builder/-grpc-request-builder/build.md
+$dokka.location:com.squareup.wire.GrpcRequestBuilder$method(kotlin.String, com.squareup.wire.GrpcRequestBody)com.squareup.wire/-grpc-request-builder/-grpc-request-builder/method.md
+$dokka.location:com.squareup.wire.GrpcRequestBuilder$url(com.squareup.wire.GrpcHttpUrl)com.squareup.wire/-grpc-request-builder/-grpc-request-builder/url.md
 $dokka.location:com.squareup.wire.GrpcResponsecom.squareup.wire/-grpc-response/index.md
 $dokka.location:com.squareup.wire.GrpcResponse$bodycom.squareup.wire/-grpc-response/-grpc-response/body.md
 $dokka.location:com.squareup.wire.GrpcResponse$close()com.squareup.wire/-grpc-response/-grpc-response/close.md

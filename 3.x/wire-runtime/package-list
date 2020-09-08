@@ -1,4 +1,9 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
-
+$dokka.location:com.squareup.wire.Durationcom.squareup.wire/-duration/index.md
+$dokka.location:com.squareup.wire.Duration$getNano()com.squareup.wire/-duration/-duration/get-nano.md
+$dokka.location:com.squareup.wire.Duration$getSeconds()com.squareup.wire/-duration/-duration/get-seconds.md
+$dokka.location:com.squareup.wire.Instantcom.squareup.wire/-instant/index.md
+$dokka.location:com.squareup.wire.Instant$getEpochSecond()com.squareup.wire/-instant/-instant/get-epoch-second.md
+$dokka.location:com.squareup.wire.Instant$getNano()com.squareup.wire/-instant/-instant/get-nano.md
 com.squareup.wire
