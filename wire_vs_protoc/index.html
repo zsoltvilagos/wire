@@ -692,7 +692,7 @@ except at the root of it.</p>
 <p>Wire didn’t create new types for wrappers either, each wrapper will be represented by a nullable
 version of the primitive type it defines. For instance <code>google.protobuf.FloatValue</code> will be
 represented in Java by the float boxed type <code>@Nullable Float</code>, in Kotlin by <code>Float?</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Wire kotlin</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wire</span>
 <span class="k">val</span> <span class="py">floatValue</span> <span class="p">=</span> <span class="m">33.3f</span>
 
 <span class="c1">// Protoc</span>
@@ -704,7 +704,7 @@ represented in Java by the float boxed type <code>@Nullable Float</code>, in Kot
 interoperable but their API are quite different. Wire offers JSON serialization over <a href="https://github.com/square/moshi/">Moshi</a>
 or <a href="https://github.com/google/gson/">Gson</a>. Protoc brings its own JsonFormatter. Beware that Protoc throws an error for unknown
 fields, you need to configure it to opt-out of this behavior!</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Wire Kotlin Moshi</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wire &amp; Moshi</span>
 <span class="k">val</span> <span class="py">moshi</span> <span class="p">=</span> <span class="n">Moshi</span><span class="p">.</span><span class="n">Builder</span><span class="p">()</span>
       <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">WireJsonAdapterFactory</span><span class="p">())</span>
       <span class="p">.</span><span class="n">build</span><span class="p">()</span>
