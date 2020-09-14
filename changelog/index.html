@@ -348,6 +348,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../wire_vs_protoc/" title="Wire vs Protoc" class="md-nav__link">
+      Wire vs Protoc
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -379,6 +391,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version-330" class="md-nav__link">
+    Version 3.3.0
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#version-322" class="md-nav__link">
@@ -815,6 +834,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-330" class="md-nav__link">
+    Version 3.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-322" class="md-nav__link">
     Version 3.2.2
   </a>
@@ -1203,6 +1229,34 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-330">Version 3.3.0<a class="headerlink" href="#version-330" title="Permanent link">&para;</a></h2>
+<p><em>2020-09-14</em></p>
+<ul>
+<li>New: Proto3 support! This includes the new behaviors, the new types, and the JSON.</li>
+<li>New: Swift support for proto2 schemas. The details are in our <a href="https://cashapp.github.io/2020-08-19/wire-support-for-swift-part-1">blog post</a>.</li>
+<li>New: Wire will now throw an error when:</li>
+<li>two generated files end up overriding each other,</li>
+<li>imports form a cycle,</li>
+<li>packages form a cycle. This can be turned out with the flag <code>permitPackageCycles</code>,</li>
+<li>an option within the source set cannot be resolved,</li>
+<li>there are name duplications of members in a message, or of rpcs in a service,</li>
+<li>a map is used as an extension.</li>
+<li>New: Support for the <code>json_name</code> pseudo option.</li>
+<li>New: The <code>wire_package</code> file option allows one to set the JVM package where classes generated
+   from the concerned file will be placed. <code>wire_package</code> takes precedence over <code>java_package</code>.</li>
+<li>New: Lists and maps in Kotlin generated code are now immutable.</li>
+<li>New: Support UTF-8 with BOM in proto files.</li>
+<li>New: <code>wire.since</code> and <code>wire.until</code> have been renamed with the prefix <code>constant_</code> for
+   <code>EnumValueOptions</code>.</li>
+<li>New: Wire generates 1) annotations for options which 2) gets assigned to the generated code where
+   appropriate. Both behavior can be turn on or off via the flags:</li>
+<li><code>emitDeclaredOptions</code>: True to emit types for options declared on messages, fields, etc.
+     Default to true,</li>
+<li><code>emitAppliedOptions</code>: True to emit annotations for options applied on messages, fields, etc.
+     Default to false.</li>
+<li>Fix: Recursive map values.</li>
+<li>Fix: Long expressions in equals and encodedSize functions.</li>
+</ul>
 <h2 id="version-322">Version 3.2.2<a class="headerlink" href="#version-322" title="Permanent link">&para;</a></h2>
 <p><em>2020-05-15</em></p>
 <ul>
@@ -1801,7 +1855,7 @@ no longer need a <code>Wire</code> instance!</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../3.x/wire-runtime/com.squareup.wire/" title="wire-runtime" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../wire_vs_protoc/" title="Wire vs Protoc" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1810,7 +1864,7 @@ no longer need a <code>Wire</code> instance!</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                wire-runtime
+                Wire vs Protoc
               </div>
             </div>
           </a>

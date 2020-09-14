@@ -456,6 +456,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../wire_vs_protoc/" title="Wire vs Protoc" class="md-nav__link">
+      Wire vs Protoc
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../changelog/" title="Change Log" class="md-nav__link">
       Change Log
     </a>
@@ -871,6 +883,12 @@ clients. Such code will have <code>name</code>, as well as both the <code>age</c
     <span class="c1">// True to emit code that uses reflection for reading, writing, and toString</span>
     <span class="c1">// methods which are normally implemented with generated code.</span>
     <span class="n">compact</span> <span class="o">=</span> <span class="kc">true</span>
+
+    <span class="c1">// True to emit types for options declared on messages, fields, etc.</span>
+    <span class="n">emitDeclaredOptions</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
+
+    <span class="c1">// True to emit annotations for options applied on messages, fields, etc.</span>
+    <span class="n">emitAppliedOptions</span> <span class="o">=</span> <span class="kc">true</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -908,6 +926,12 @@ behavior.</p>
     <span class="c1">// True for emitted types to implement APIs for easier migration from the Java</span>
     <span class="c1">// target.</span>
     <span class="n">javaInterop</span> <span class="o">=</span> <span class="kc">true</span>
+
+    <span class="c1">// True to emit types for options declared on messages, fields, etc.</span>
+    <span class="n">emitDeclaredOptions</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
+
+    <span class="c1">// True to emit annotations for options applied on messages, fields, etc.</span>
+    <span class="n">emitAppliedOptions</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
 
     <span class="c1">// `suspending` to generate coroutines APIs that require a Kotlin coroutines context.</span>
     <span class="c1">// `blocking` to generate blocking APIs callable by Java and Kotlin.</span>

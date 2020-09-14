@@ -1,0 +1,809 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="gRPC and protocol buffers for Android, Kotlin, and Java.">
+      
+      
+      
+        <meta name="author" content="Square, Inc.">
+      
+      <link rel="shortcut icon" href="../images/icon-square.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>Wire vs Protoc - Wire</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.6a5ad368.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2094f3">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/app.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wire-versus-protoc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Wire" class="md-header-nav__button md-logo" aria-label="Wire">
+      
+  <img src="../images/icon-square.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Wire
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Wire vs Protoc
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/square/wire/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wire
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Wire" class="md-nav__button md-logo" aria-label="Wire">
+      
+  <img src="../images/icon-square.png" alt="logo">
+
+    </a>
+    Wire
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/square/wire/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wire
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wire_compiler/" title="Gradle Plugin" class="md-nav__link">
+      Gradle Plugin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wire_grpc/" title="gRPC" class="md-nav__link">
+      gRPC
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://stackoverflow.com/questions/tagged/wire?sort=active" title="Stack Overflow ⏏" class="md-nav__link">
+      Stack Overflow ⏏
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      3.x API
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="3.x API" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        3.x API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3.x/wire-grpc-client/com.squareup.wire/" title="wire-grpc-client" class="md-nav__link">
+      wire-grpc-client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3.x/wire-moshi-adapter/com.squareup.wire/" title="wire-moshi-adapter" class="md-nav__link">
+      wire-moshi-adapter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3.x/wire-runtime/com.squareup.wire/" title="wire-runtime" class="md-nav__link">
+      wire-runtime
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      2.x API
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="2.x API" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        2.x API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://square.github.io/wire/2.x/wire-gson-support/" title="wire-gson-support ⏏" class="md-nav__link">
+      wire-gson-support ⏏
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://square.github.io/wire/2.x/wire-runtime/" title="wire-runtime ⏏" class="md-nav__link">
+      wire-runtime ⏏
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Wire vs Protoc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Wire vs Protoc" class="md-nav__link md-nav__link--active">
+      Wire vs Protoc
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#non-primitive-types" class="md-nav__link">
+    Non-Primitive Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-Primitive Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#any" class="md-nav__link">
+    Any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration-timestamp" class="md-nav__link">
+    Duration &amp; Timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct" class="md-nav__link">
+    Struct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrappers" class="md-nav__link">
+    Wrappers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="Change Log" class="md-nav__link">
+      Change Log
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../code_of_conduct/" title="Code of Conduct" class="md-nav__link">
+      Code of Conduct
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://developers.google.com/protocol-buffers/docs/proto" title="Protocol Buffers ⏏" class="md-nav__link">
+      Protocol Buffers ⏏
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#non-primitive-types" class="md-nav__link">
+    Non-Primitive Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-Primitive Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#any" class="md-nav__link">
+    Any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration-timestamp" class="md-nav__link">
+    Duration &amp; Timestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#struct" class="md-nav__link">
+    Struct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrappers" class="md-nav__link">
+    Wrappers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    JSON
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/square/wire/edit/master/docs/wire_vs_protoc.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="wire-versus-protoc">Wire versus Protoc<a class="headerlink" href="#wire-versus-protoc" title="Permanent link">&para;</a></h1>
+<h2 id="non-primitive-types">Non-Primitive Types<a class="headerlink" href="#non-primitive-types" title="Permanent link">&para;</a></h2>
+<p>Protoc generates literal equivalents for all the Proto3 new types like <code>empty</code>, <code>struct</code>, etc. Wire
+tries to reuse existing types in the corresponding language when possible. The only new type Wire
+brings is <code>AnyMessage</code> for the <code>google.protobuf.Any</code> proto type.</p>
+<h3 id="any">Any<a class="headerlink" href="#any" title="Permanent link">&para;</a></h3>
+<p>The <code>Any</code> type wraps an arbitrary protobuf message by holding a field to identify its type and
+another field for storing the serialized representation of the wrapped message. Wire comes with its
+own <code>AnyMessage</code> type to represent <code>google.protobuf.Any</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">AnyMessage</span><span class="p">(</span>
+  <span class="k">val</span> <span class="py">typeUrl</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+  <span class="k">val</span> <span class="py">value</span><span class="p">:</span> <span class="n">okio</span><span class="p">.</span><span class="n">ByteString</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>It comes with a few methods to wrap or unwrap the embedded message.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wire</span>
+<span class="k">val</span> <span class="py">anyMessage</span><span class="p">:</span> <span class="n">AnyMessage</span> <span class="p">=</span> <span class="n">AnyMessage</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">person</span><span class="p">:</span> <span class="n">Person</span> <span class="p">=</span> <span class="n">anyMessage</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">Person</span><span class="p">.</span><span class="n">ADAPTER</span><span class="p">)</span>
+
+<span class="c1">// Protoc</span>
+<span class="k">val</span> <span class="py">any</span><span class="p">:</span> <span class="n">Any</span> <span class="p">=</span> <span class="n">Any</span><span class="p">.</span><span class="n">pack</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">person</span><span class="p">:</span> <span class="n">Person</span> <span class="p">=</span> <span class="n">any</span><span class="p">.</span><span class="n">unpack</span><span class="p">(</span><span class="n">Person</span><span class="p">.</span><span class="k">class</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="duration-timestamp">Duration &amp; Timestamp<a class="headerlink" href="#duration-timestamp" title="Permanent link">&para;</a></h3>
+<p>Both <code>google.protobuf.Duration</code> and <code>google.protobuf.Timestamp</code> types will be generated by using
+their JVM equivalent: <code>java.time.Duration</code> and <code>java.time.Instant</code>. For non-JVM platforms, we
+provide two new Wire types with the same APIs:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">com</span><span class="p">.</span><span class="n">squareup</span><span class="p">.</span><span class="n">wire</span><span class="p">.</span><span class="n">Duration</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">getSeconds</span><span class="p">():</span> <span class="n">Long</span>
+  <span class="k">fun</span> <span class="nf">getNano</span><span class="p">():</span> <span class="n">Int</span>
+<span class="p">}</span>
+<span class="k">fun</span> <span class="nf">durationOfSeconds</span><span class="p">(</span><span class="n">seconds</span><span class="p">:</span> <span class="n">Long</span><span class="p">,</span> <span class="n">nano</span><span class="p">:</span> <span class="n">Long</span><span class="p">):</span> <span class="n">Duration</span>
+
+<span class="k">class</span> <span class="nc">com</span><span class="p">.</span><span class="n">squareup</span><span class="p">.</span><span class="n">wire</span><span class="p">.</span><span class="n">Instant</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">getEpochSecond</span><span class="p">():</span> <span class="n">Long</span>
+  <span class="k">fun</span> <span class="nf">getNano</span><span class="p">():</span> <span class="n">Int</span>
+<span class="p">}</span>
+<span class="k">fun</span> <span class="nf">ofEpochSecond</span><span class="p">(</span><span class="n">epochSecond</span><span class="p">:</span> <span class="n">Long</span><span class="p">,</span> <span class="n">nano</span><span class="p">:</span> <span class="n">Long</span><span class="p">):</span> <span class="n">Instant</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">// Wire</span>
+<span class="k">val</span> <span class="py">duration</span><span class="p">:</span> <span class="n">java</span><span class="p">.</span><span class="n">time</span><span class="p">.</span><span class="n">Duration</span> <span class="p">=</span> <span class="n">Duration</span><span class="p">.</span><span class="n">standardMinutes</span><span class="p">(</span><span class="m">15</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">instant</span><span class="p">:</span> <span class="n">java</span><span class="p">.</span><span class="n">time</span><span class="p">.</span><span class="n">Instant</span> <span class="p">=</span> <span class="n">Instant</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="c1">// Protoc</span>
+<span class="k">val</span> <span class="py">duration</span><span class="p">:</span> <span class="n">google</span><span class="p">.</span><span class="n">protobuf</span><span class="p">.</span><span class="n">Duration</span> <span class="p">=</span>
+    <span class="n">Duration</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">setSeconds</span><span class="p">(</span><span class="m">60</span> <span class="p">*</span> <span class="m">15</span><span class="p">)</span>
+      <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">instant</span><span class="p">:</span> <span class="n">google</span><span class="p">.</span><span class="n">protobuf</span><span class="p">.</span><span class="n">Timestamp</span> <span class="p">=</span>
+    <span class="n">Timestamps</span><span class="p">.</span><span class="n">fromMillis</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">currentTimeMillis</span><span class="p">())</span>
+</code></pre></div>
+
+<h3 id="struct">Struct<a class="headerlink" href="#struct" title="Permanent link">&para;</a></h3>
+<p><code>google.protobuf.Struct</code> is meant mainly to represent JSON objects in code. Instead of building new
+types, Wire reuses Java/Kotlin native types to represent all Struct types.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Google Protobuf Type</th>
+<th align="left">Wire’s Java Equivalent</th>
+<th align="left">Wire’s Kotlin Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Struct</code></td>
+<td align="left"><code>Map&lt;String, ?&gt;</code></td>
+<td align="left"><code>Map&lt;String, ?&gt;?</code></td>
+</tr>
+<tr>
+<td align="left"><code>ListValue</code></td>
+<td align="left"><code>List&lt;?&gt;</code></td>
+<td align="left"><code>List&lt;?&gt;?</code></td>
+</tr>
+<tr>
+<td align="left"><code>Value</code></td>
+<td align="left"><code>Object</code></td>
+<td align="left"><code>Any?</code></td>
+</tr>
+<tr>
+<td align="left"><code>NullValue</code></td>
+<td align="left"><code>Void</code></td>
+<td align="left"><code>Nothing?</code></td>
+</tr>
+</tbody>
+</table>
+<p>One difference worth noting between Protoc and Wire is that Protoc can make the difference between
+an absent value, and a <code>null</code> value, Wire doesn’t. Wire will always write <code>null</code>s in JSON objects
+except at the root of it.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wire</span>
+<span class="k">val</span> <span class="py">struct</span> <span class="p">=</span> <span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span> <span class="n">to</span> <span class="m">1.0</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">list</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="err">“</span><span class="n">b</span><span class="err">”</span><span class="p">,</span> <span class="m">2.0</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">boolValue</span> <span class="p">=</span> <span class="k">true</span>
+<span class="k">val</span> <span class="py">nullValue</span> <span class="p">=</span> <span class="k">null</span>
+
+<span class="c1">// Protoc</span>
+<span class="k">val</span> <span class="py">struct</span><span class="p">:</span> <span class="n">Struct</span> <span class="p">=</span>
+    <span class="n">Struct</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">().</span><span class="n">apply</span> <span class="p">{</span>
+        <span class="n">putFields</span><span class="p">(</span><span class="err">“</span><span class="n">a</span><span class="err">”</span><span class="p">,</span> <span class="n">Value</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">.</span><span class="n">setNumberValue</span><span class="p">(</span><span class="m">1.0</span><span class="p">).</span><span class="n">build</span><span class="p">())</span>
+    <span class="p">}</span>
+    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">list</span><span class="p">:</span> <span class="n">List</span> <span class="p">=</span>
+    <span class="n">ListValue</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">().</span><span class="n">apply</span> <span class="p">{</span>
+        <span class="n">addValues</span><span class="p">(</span><span class="n">Value</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">.</span><span class="n">setStringValue</span><span class="p">(</span><span class="err">“</span><span class="n">a</span><span class="err">”</span><span class="p">).</span><span class="n">build</span><span class="p">())</span>
+        <span class="n">addValues</span><span class="p">(</span><span class="n">Value</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">.</span><span class="n">setNumberValue</span><span class="p">(</span><span class="m">2.0</span><span class="p">).</span><span class="n">build</span><span class="p">())</span>
+    <span class="p">}</span>
+    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">boolValue</span> <span class="p">=</span> <span class="n">Value</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">.</span><span class="n">setBoolValue</span><span class="p">(</span><span class="k">true</span><span class="p">).</span><span class="n">build</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">nullValue</span> <span class="p">=</span> <span class="n">Value</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">().</span><span class="n">setNullValue</span><span class="p">(</span><span class="n">NullValue</span><span class="p">.</span><span class="n">NULL_VALUE</span><span class="p">).</span><span class="n">build</span><span class="p">()</span>
+</code></pre></div>
+
+<h3 id="wrappers">Wrappers<a class="headerlink" href="#wrappers" title="Permanent link">&para;</a></h3>
+<p>Wire didn’t create new types for wrappers either, each wrapper will be represented by a nullable
+version of the primitive type it defines. For instance <code>google.protobuf.FloatValue</code> will be
+represented in Java by the float boxed type <code>@Nullable Float</code>, in Kotlin by <code>Float?</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wire kotlin</span>
+<span class="k">val</span> <span class="py">floatValue</span> <span class="p">=</span> <span class="m">33.3f</span>
+
+<span class="c1">// Protoc</span>
+<span class="k">val</span> <span class="py">floatValue</span> <span class="p">=</span> <span class="n">FloatValue</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">().</span><span class="n">setValue</span><span class="p">(</span><span class="m">33.3f</span><span class="p">).</span><span class="n">build</span><span class="p">()</span>
+</code></pre></div>
+
+<h3 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h3>
+<p>While Proto2 didn’t, Proto3 defines Protobuf serialization over JSON. Wire and Protoc are
+interoperable but their API are quite different. Wire offers JSON serialization over <a href="https://github.com/square/moshi/">Moshi</a>
+or <a href="https://github.com/google/gson/">Gson</a>. Protoc brings its own JsonFormatter. Beware that Protoc throws an error for unknown
+fields, you need to configure it to opt-out of this behavior!</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Wire Kotlin Moshi</span>
+<span class="k">val</span> <span class="py">moshi</span> <span class="p">=</span> <span class="n">Moshi</span><span class="p">.</span><span class="n">Builder</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">WireJsonAdapterFactory</span><span class="p">())</span>
+      <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">adapter</span> <span class="p">=</span> <span class="n">moshi</span><span class="p">.</span><span class="n">adapter</span><span class="p">(</span><span class="n">Pizza</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">pizza</span><span class="p">:</span> <span class="n">Pizza</span> <span class="p">=</span> <span class="p">...</span>
+<span class="k">val</span> <span class="py">json</span> <span class="p">=</span> <span class="n">adapter</span><span class="p">.</span><span class="n">toJson</span><span class="p">(</span><span class="n">pizza</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">parsedPizza</span> <span class="p">=</span> <span class="n">adapter</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+
+<span class="c1">// Protoc</span>
+<span class="k">val</span> <span class="py">pizza</span><span class="p">:</span> <span class="n">PizzaOuterClass</span><span class="p">.</span><span class="n">Pizza</span> <span class="p">=</span> <span class="err">…</span>
+<span class="k">val</span> <span class="py">json</span> <span class="p">=</span> <span class="n">JsonFormat</span><span class="p">.</span><span class="n">printer</span><span class="p">().</span><span class="n">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">jsonParser</span> <span class="p">=</span> <span class="n">JsonFormat</span><span class="p">.</span><span class="n">parser</span><span class="p">().</span><span class="n">ignoringUnknownFields</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">parsedBuilder</span> <span class="p">=</span> <span class="n">PizzaOuterClass</span><span class="p">.</span><span class="n">Pizza</span><span class="p">.</span><span class="n">newBuilder</span><span class="p">()</span>
+<span class="n">jsonParser</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">parsedBuilder</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">parsedPizza</span> <span class="p">=</span> <span class="n">parsedBuilder</span><span class="p">.</span><span class="n">build</span><span class="p">()</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../3.x/wire-runtime/com.squareup.wire/" title="wire-runtime" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                wire-runtime
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../changelog/" title="Change Log" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Change Log
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Square, Inc.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
