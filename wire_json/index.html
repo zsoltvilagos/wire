@@ -14,18 +14,18 @@
       
         <meta name="author" content="Square, Inc.">
       
-      <link rel="shortcut icon" href="../../../images/icon-square.png">
+      <link rel="shortcut icon" href="../images/icon-square.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
     
     
       
-        <title>wire-grpc-client - Wire</title>
+        <title>JSON - Wire</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4dd2dd8d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.6a5ad368.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.6a5ad368.min.css">
       
       
         
@@ -43,7 +43,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../css/app.css">
+      <link rel="stylesheet" href="../css/app.css">
     
     
       
@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#wire-json" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -70,9 +75,9 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../../.." title="Wire" class="md-header-nav__button md-logo" aria-label="Wire">
+    <a href=".." title="Wire" class="md-header-nav__button md-logo" aria-label="Wire">
       
-  <img src="../../../images/icon-square.png" alt="logo">
+  <img src="../images/icon-square.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -86,7 +91,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              wire-grpc-client
+              JSON
             
           </span>
         </div>
@@ -156,9 +161,9 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Wire" class="md-nav__button md-logo" aria-label="Wire">
+    <a href=".." title="Wire" class="md-nav__button md-logo" aria-label="Wire">
       
-  <img src="../../../images/icon-square.png" alt="logo">
+  <img src="../images/icon-square.png" alt="logo">
 
     </a>
     Wire
@@ -185,7 +190,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Overview" class="md-nav__link">
+    <a href=".." title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -197,7 +202,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../wire_compiler/" title="Gradle Plugin" class="md-nav__link">
+    <a href="../wire_compiler/" title="Gradle Plugin" class="md-nav__link">
       Gradle Plugin
     </a>
   </li>
@@ -209,7 +214,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../wire_grpc/" title="gRPC" class="md-nav__link">
+    <a href="../wire_grpc/" title="gRPC" class="md-nav__link">
       gRPC
     </a>
   </li>
@@ -231,12 +236,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       3.x API
@@ -254,18 +257,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="wire-grpc-client" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../3.x/wire-grpc-client/com.squareup.wire/" title="wire-grpc-client" class="md-nav__link">
       wire-grpc-client
     </a>
-    
   </li>
 
         
@@ -275,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wire-moshi-adapter/com.squareup.wire/" title="wire-moshi-adapter" class="md-nav__link">
+    <a href="../3.x/wire-moshi-adapter/com.squareup.wire/" title="wire-moshi-adapter" class="md-nav__link">
       wire-moshi-adapter
     </a>
   </li>
@@ -287,7 +283,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wire-runtime/com.squareup.wire/" title="wire-runtime" class="md-nav__link">
+    <a href="../3.x/wire-runtime/com.squareup.wire/" title="wire-runtime" class="md-nav__link">
       wire-runtime
     </a>
   </li>
@@ -352,11 +348,63 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../wire_json/" title="JSON" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JSON
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="JSON" class="md-nav__link md-nav__link--active">
       JSON
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moshi" class="md-nav__link">
+    Moshi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gson" class="md-nav__link">
+    Gson
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protoc" class="md-nav__link">
+    Protoc
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -366,7 +414,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../wire_vs_protoc/" title="Wire vs Protoc" class="md-nav__link">
+    <a href="../wire_vs_protoc/" title="Wire vs Protoc" class="md-nav__link">
       Wire vs Protoc
     </a>
   </li>
@@ -378,7 +426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../changelog/" title="Change Log" class="md-nav__link">
+    <a href="../changelog/" title="Change Log" class="md-nav__link">
       Change Log
     </a>
   </li>
@@ -390,7 +438,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../contributing/" title="Contributing" class="md-nav__link">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -402,7 +450,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../code_of_conduct/" title="Code of Conduct" class="md-nav__link">
+    <a href="../code_of_conduct/" title="Code of Conduct" class="md-nav__link">
       Code of Conduct
     </a>
   </li>
@@ -427,12 +475,56 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moshi" class="md-nav__link">
+    Moshi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gson" class="md-nav__link">
+    Gson
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protoc" class="md-nav__link">
+    Protoc
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/square/wire/edit/master/docs/3.x/wire-grpc-client/com.squareup.wire/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/square/wire/edit/master/docs/wire_json.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -440,9 +532,41 @@
                   
                 
                 
-                  <h1>wire-grpc-client</h1>
-                
-                
+                <h1 id="wire-json">Wire JSON<a class="headerlink" href="#wire-json" title="Permanent link">&para;</a></h1>
+<p>Wire offers JSON serialization over <a href="https://github.com/square/moshi/">Moshi</a> or <a href="https://github.com/google/gson/">Gson</a>. We provide an adapter factory
+for both to configure them to deal with protobuf specifics.</p>
+<h3 id="moshi">Moshi<a class="headerlink" href="#moshi" title="Permanent link">&para;</a></h3>
+<p>Moshi support is part of the <code>wire-moshi-adapter</code> module. It has to be added to the project
+dependencies in order to plug the <code>WireJsonAdapterFactory</code> into Moshi.</p>
+<p>The Maven coordinates are: <code>com.squareup.wire:wire-moshi-adapter:&lt;version&gt;</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">val</span> <span class="py">moshi</span> <span class="p">=</span> <span class="n">Moshi</span><span class="p">.</span><span class="n">Builder</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">WireJsonAdapterFactory</span><span class="p">())</span>
+      <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+
+<span class="k">val</span> <span class="py">adapter</span> <span class="p">=</span> <span class="n">moshi</span><span class="p">.</span><span class="n">adapter</span><span class="p">(</span><span class="n">Pizza</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">pizza</span><span class="p">:</span> <span class="n">Pizza</span> <span class="p">=</span> <span class="p">...</span>
+<span class="k">val</span> <span class="py">json</span> <span class="p">=</span> <span class="n">adapter</span><span class="p">.</span><span class="n">toJson</span><span class="p">(</span><span class="n">pizza</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">parsedPizza</span> <span class="p">=</span> <span class="n">adapter</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="gson">Gson<a class="headerlink" href="#gson" title="Permanent link">&para;</a></h3>
+<p>Moshi support is part of the <code>wire-gson-support</code> module. It has to be added to the project
+dependencies in order to plug the <code>WireTypeAdapterFactory</code> into Gson.</p>
+<p>The Maven coordinates are: <code>com.squareup.wire:wire-gson-support:&lt;version&gt;</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">val</span> <span class="py">gson</span> <span class="p">=</span> <span class="n">GsonBuilder</span><span class="p">()</span>
+      <span class="p">.</span><span class="n">registerTypeAdapterFactory</span><span class="p">(</span><span class="n">WireTypeAdapterFactory</span><span class="p">())</span>
+      <span class="p">.</span><span class="n">create</span><span class="p">()</span>
+
+<span class="k">val</span> <span class="py">adapter</span> <span class="p">=</span> <span class="n">gson</span><span class="p">.</span><span class="n">adapter</span><span class="p">(</span><span class="n">Pizza</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">pizza</span><span class="p">:</span> <span class="n">Pizza</span> <span class="p">=</span> <span class="p">...</span>
+<span class="k">val</span> <span class="py">json</span> <span class="p">=</span> <span class="n">adapter</span><span class="p">.</span><span class="n">toJson</span><span class="p">(</span><span class="n">pizza</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">parsedPizza</span> <span class="p">=</span> <span class="n">adapter</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="protoc">Protoc<a class="headerlink" href="#protoc" title="Permanent link">&para;</a></h3>
+<p>Wire is interoperable with protoc for all proto3 messages. The JSON representation of proto2 is
+unspecified. JSON representations of proto2 messages from Wire and protoc are not interoperable.
+Note that by default Protoc throws an error for unknown fields. Wire will ignore them.</p>
                 
               
               
@@ -461,7 +585,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../../wire_grpc/" title="gRPC" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../3.x/wire-runtime/com.squareup.wire/" title="wire-runtime" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -470,19 +594,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                gRPC
+                wire-runtime
               </div>
             </div>
           </a>
         
         
-          <a href="../../wire-moshi-adapter/com.squareup.wire/" title="wire-moshi-adapter" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../wire_vs_protoc/" title="Wire vs Protoc" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                wire-moshi-adapter
+                Wire vs Protoc
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -513,15 +637,15 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "../../..",
+          base: "..",
           features: [],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
