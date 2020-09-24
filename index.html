@@ -15,7 +15,7 @@
         <meta name="author" content="Square, Inc.">
       
       <link rel="shortcut icon" href="images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
     
     
       
@@ -23,14 +23,14 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4dd2dd8d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.b8ac9624.min.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/palette.6a5ad368.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.28f3ef9a.min.css">
       
       
         
         
-        <meta name="theme-color" content="#2094f3">
+        <meta name="theme-color" content="#2196f3">
       
     
     
@@ -200,7 +200,9 @@
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Overview
-        <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
     <a href="." title="Overview" class="md-nav__link md-nav__link--active">
@@ -215,7 +217,9 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -330,11 +334,15 @@
     
     <label class="md-nav__link" for="nav-5">
       3.x API
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
     <nav class="md-nav" aria-label="3.x API" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         3.x API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -392,11 +400,15 @@
     
     <label class="md-nav__link" for="nav-6">
       2.x API
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
     <nav class="md-nav" aria-label="2.x API" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         2.x API
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -521,7 +533,9 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -653,13 +667,13 @@ Consumers work best with data they understand!</p>
 
 <span class="kd">enum</span> <span class="n">Period</span> <span class="p">{</span>
   <span class="c1">// 145.5 million years ago — 66.0 million years ago.</span>
-  <span class="na">CRETACEOUS</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="na">CRETACEOUS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
   <span class="c1">// 201.3 million years ago — 145.0 million years ago.</span>
-  <span class="na">JURASSIC</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="na">JURASSIC</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
   <span class="c1">// 252.17 million years ago — 201.3 million years ago.</span>
-  <span class="na">TRIASSIC</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="na">TRIASSIC</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -1134,12 +1148,12 @@ that use Wire-generated code.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>com.squareup.wire<span class="nt">&lt;/groupId&gt;</span>
   <span class="nt">&lt;artifactId&gt;</span>wire-runtime<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>3.3.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;version&gt;</span>3.4.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div>
 
 <p>With Gradle:</p>
-<div class="highlight"><pre><span></span><code><span class="n">api</span> <span class="s2">&quot;com.squareup.wire:wire-runtime:3.3.0&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">api</span> <span class="s2">&quot;com.squareup.wire:wire-runtime:3.4.0&quot;</span>
 </code></pre></div>
 
 <p>Snapshots of the development version are available in <a href="https://oss.sonatype.org/content/repositories/snapshots/">Sonatype&rsquo;s <code>snapshots</code> repository</a>.</p>
@@ -1208,15 +1222,15 @@ that use Wire-generated code.</p>
       
     </div>
     
-      <script src="assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: ".",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
