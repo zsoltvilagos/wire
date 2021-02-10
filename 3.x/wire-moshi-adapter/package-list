@@ -1,4 +1,4 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
-
+$dokka.location:com.squareup.wire$redacting(com.squareup.moshi.JsonAdapter((com.squareup.wire.redacting.T)))com.squareup.wire/com.squareup.moshi.-json-adapter/redacting.md
 com.squareup.wire
