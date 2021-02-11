@@ -254,6 +254,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dependencies-between-gradle-modules" class="md-nav__link">
+    Dependencies between Gradle Modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pruning" class="md-nav__link">
     Pruning
   </a>
@@ -581,6 +588,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dependencies-between-gradle-modules" class="md-nav__link">
+    Dependencies between Gradle Modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pruning" class="md-nav__link">
     Pruning
   </a>
@@ -843,6 +857,38 @@ coordinates. Similarly, the proto path may be filtered with <code>include</code>
 
 <p>The source path and proto path are linked together but only types on the source path are generated.</p>
 <p><img alt="Library" src="../images/gradle_library%402x.png" /></p>
+<h2 id="dependencies-between-gradle-modules">Dependencies between Gradle Modules<a class="headerlink" href="#dependencies-between-gradle-modules" title="Permanent link">&para;</a></h2>
+<p>Wire provides support to define dependencies between modules within the same project.</p>
+<p>A module can include its <code>.proto</code> files into the output resources. Use this when your <code>.jar</code> file
+can be used as a library for other proto or Wire projects. Note that only the <code>.proto</code> files used
+in the library will be included.</p>
+<div class="highlight"><pre><span></span><code><span class="n">wire</span> <span class="o">{</span>
+  <span class="n">protoLibrary</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p>Wire also creates two configurations, <code>protoPath</code> and <code>protoSource</code> you can use to define a
+dependency on another proto or Wire project.</p>
+<div class="highlight"><pre><span></span><code><span class="n">dependencies</span> <span class="o">{</span>
+  <span class="c1">// The task `:common-protos:jar` will be added into the dependency</span>
+  <span class="c1">// graph of this module for the Wire generating tasks.</span>
+  <span class="n">protoPath</span><span class="o">(</span><span class="n">project</span><span class="o">(</span><span class="s1">&#39;:common-protos&#39;</span><span class="o">))</span>
+  <span class="n">implementation</span><span class="o">(</span><span class="n">project</span><span class="o">(</span><span class="s1">&#39;:common-protos&#39;</span><span class="o">))</span>
+<span class="o">}</span>
+
+<span class="n">wire</span> <span class="o">{</span>
+  <span class="n">kotlin</span> <span class="o">{</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p>Note that <code>protoPath</code> and <code>protoSource</code> dependencies are not transitive by default. If needed, you
+can change it manually.</p>
+<div class="highlight"><pre><span></span><code><span class="n">configurations</span><span class="o">.</span><span class="na">protoPath</span> <span class="o">{</span>
+  <span class="n">transitive</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="o">}</span>
+</code></pre></div>
+
 <h2 id="pruning">Pruning<a class="headerlink" href="#pruning" title="Permanent link">&para;</a></h2>
 <p>For mobile projects it&rsquo;s easy to generate a lot of unnecessary code. For example, a <code>.proto</code> schema
 might support types for obsolete features.</p>
