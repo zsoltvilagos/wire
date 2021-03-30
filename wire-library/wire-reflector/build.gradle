@@ -48,6 +48,6 @@ task generateReflectionProtos(type: JavaExec) {
   )
 }
 
-jvmMainClasses {
+compileKotlinJvm {
   dependsOn generateReflectionProtos
 }
