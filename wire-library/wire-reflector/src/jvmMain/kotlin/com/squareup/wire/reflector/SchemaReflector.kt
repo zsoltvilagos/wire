@@ -20,6 +20,7 @@ import com.squareup.wire.schema.Location
 import com.squareup.wire.schema.Schema
 import com.squareup.wire.schema.internal.SchemaEncoder
 import grpc.reflection.v1alpha.ErrorResponse
+import grpc.reflection.v1alpha.ExtensionRequest
 import grpc.reflection.v1alpha.FileDescriptorResponse
 import grpc.reflection.v1alpha.ListServiceResponse
 import grpc.reflection.v1alpha.ServerReflectionRequest
@@ -37,7 +38,10 @@ class SchemaReflector(
     request.list_services != null -> listServices()
     request.file_by_filename != null -> fileByFilename(request)
     request.file_containing_symbol != null -> fileContainingSymbol(request.file_containing_symbol)
-    //TODO: request.file_containing_extension request.all_extension_numbers_of_type
+    request.file_containing_extension != null ->
+      fileContainingExtension(request.file_containing_extension)
+    request.all_extension_numbers_of_type != null ->
+      allExtensionNumbersOfType(request.all_extension_numbers_of_type)
     else -> {
       ServerReflectionResponse(
         original_request = request,
@@ -80,32 +84,46 @@ class SchemaReflector(
   private fun fileContainingSymbol(file_containing_symbol: String): ServerReflectionResponse {
     val symbol = file_containing_symbol.removePrefix(".")
 
-    val service = schema.getService(symbol)
-
-    val location: Location
-    if (service != null) {
-      location = service.location
-    } else {
-      val type = schema.getType(symbol)
-      if (type != null) {
-        location = type.location
-      } else {
-        val method = symbol.substringAfterLast(".")
-        val fullServiceName = symbol.substringBeforeLast(".")
-        val serviceWithMethod = schema.getService(fullServiceName)
-        if (serviceWithMethod != null) {
-          location = serviceWithMethod.location
-        } else {
-          error("TODO: fail the call somehow?")
-        }
-      }
-    }
+    val location: Location = findLocation(symbol) ?: return ServerReflectionResponse(
+      error_response = ErrorResponse(
+        error_code = GrpcStatus.NOT_FOUND.code,
+        error_message = "cannot find file for symbol: $file_containing_symbol"
+      )
+    )
 
     val protoFile = schema.protoFile(location.path)!!
     val result = SchemaEncoder(schema).encode(protoFile).toFileDescriptorResponse()
     return ServerReflectionResponse(
       file_descriptor_response = result
     )
+  }
+
+  private fun findLocation(symbol: String): Location? {
+    val service = schema.getService(symbol)
+    if (service != null) {
+      return service.location
+    }
+
+    val type = schema.getType(symbol)
+    if (type != null) {
+      return type.location
+    }
+
+    val fullServiceName = symbol.substringBeforeLast(".")
+    val serviceWithMethod = schema.getService(fullServiceName)
+    if (serviceWithMethod != null) {
+      return serviceWithMethod.location
+    }
+
+    return null
+  }
+
+  private fun fileContainingExtension(fileContainingExtension: ExtensionRequest): ServerReflectionResponse {
+    TODO("Not yet implemented")
+  }
+
+  private fun allExtensionNumbersOfType(allExtensionNumbersOfType: String): ServerReflectionResponse {
+    TODO("Not yet implemented")
   }
 
   private fun ByteString.toFileDescriptorResponse(): FileDescriptorResponse {
