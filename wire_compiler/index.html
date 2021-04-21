@@ -835,7 +835,7 @@ The <code>option java_package</code> name is not used for Wire configuration.</p
 <p>Large projects may span multiple modules. To support this Wire has a &lsquo;proto path&rsquo;. The <code>.proto</code>
 schema files on this path are used for linking and validation, but they do not yield files in the
 generated output.</p>
-<p>The proto path supports the same inputs as the proto path: directories, <code>.jar</code> files, and Maven
+<p>The proto path supports the same inputs as the source path: directories, <code>.jar</code> files, and Maven
 coordinates. Similarly, the proto path may be filtered with <code>include</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">wire</span> <span class="o">{</span>
   <span class="n">protoPath</span> <span class="o">{</span>
@@ -1051,6 +1051,7 @@ behavior.</p>
 
     <span class="c1">// `client` to generate interfaces best suited to sending outbound calls.</span>
     <span class="c1">// `server` to generate interfaces best suited to receiving inbound calls.</span>
+    <span class="c1">// `none` to not generate services.</span>
     <span class="n">rpcRole</span> <span class="o">=</span> <span class="s1">&#39;server&#39;</span>
 
     <span class="c1">// True for emitted services to implement one interface per RPC.</span>

@@ -405,6 +405,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-370" class="md-nav__link">
+    Version 3.7.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-361" class="md-nav__link">
+    Version 3.6.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-360" class="md-nav__link">
     Version 3.6.0
   </a>
@@ -867,6 +881,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-370" class="md-nav__link">
+    Version 3.7.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-361" class="md-nav__link">
+    Version 3.6.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-360" class="md-nav__link">
     Version 3.6.0
   </a>
@@ -1283,6 +1311,23 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-370">Version 3.7.0<a class="headerlink" href="#version-370" title="Permanent link">&para;</a></h2>
+<p><em>2021-03-25</em></p>
+<ul>
+<li>New: <code>srcProject(":project-name")</code> makes it easier to depend on <code>.proto</code> files of other projects.</li>
+<li>Fix: Don&rsquo;t require source that <code>.proto</code> directories exist at Gradle plugin configuration time.
+   This was preventing Wire from using other tasks&rsquo; outputs as its inputs.</li>
+<li>Fix: Don&rsquo;t fail if options have a <code>.</code> prefix.</li>
+</ul>
+<h2 id="version-361">Version 3.6.1<a class="headerlink" href="#version-361" title="Permanent link">&para;</a></h2>
+<p><em>2021-03-09</em></p>
+<ul>
+<li>Fix: The Wire Gradle plugin now supports Java only Android projects.</li>
+<li>Fix: In the Wire Gradle plugin, <code>sourcePath</code> will now include only protos defined with <code>include</code>
+   if the option is present. It used to include all existing <code>.proto</code> files even if <code>include</code> was
+   used.</li>
+<li>New: Full support Optional Int64 and UInt64 for JSONString in Swift.</li>
+</ul>
 <h2 id="version-360">Version 3.6.0<a class="headerlink" href="#version-360" title="Permanent link">&para;</a></h2>
 <p><em>2021-02-08</em></p>
 <ul>
