@@ -517,6 +517,14 @@ on the network are the same.</p>
 <td><code>abstract val method:</code><a href="../-grpc-method/"><code>GrpcMethod</code></a><code>&lt;</code><a href="./#S"><code>S</code></a><code>,</code><a href="./#R"><code>R</code></a><code>&gt;</code><br>The method invoked by this call.</td>
 </tr>
 <tr>
+<td><a href="request-metadata/">requestMetadata</a></td>
+<td><code>abstract var requestMetadata:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;</code><br>A map containing request metadata. This is initially empty; it can be assigned to any other map of metadata before the call is executed. It is an error to set this value after the call is executed.</td>
+</tr>
+<tr>
+<td><a href="response-metadata/">responseMetadata</a></td>
+<td><code>abstract val responseMetadata:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;?</code><br>A map containing response metadata. This is null until the call has executed, at which point it will be non-null if the call completed successfully. It may also be non-null in failure cases if the failure was not a problem of connectivity. For example, if the gRPC call fails with an HTTP 503 error, response metadata will be present.</td>
+</tr>
+<tr>
 <td><a href="timeout/">timeout</a></td>
 <td><code>abstract val timeout: &lt;ERROR CLASS&gt;</code><br>Configures how long the call can take to complete before it is automatically canceled.</td>
 </tr>

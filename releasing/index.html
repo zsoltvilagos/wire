@@ -461,9 +461,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cutting-a-release" class="md-nav__link">
-    Cutting a Release
+  <a href="#cutting-a-jvm-release" class="md-nav__link">
+    Cutting a JVM Release
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-the-swift-cocoapods" class="md-nav__link">
+    Publishing the Swift CocoaPods
+  </a>
+  
+    <nav class="md-nav" aria-label="Publishing the Swift CocoaPods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-the-version" class="md-nav__link">
+    Setting the Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-the-podspecs" class="md-nav__link">
+    Publishing the Podspecs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -526,7 +553,7 @@ file manually with the following command where <code>XXXXXXXX</code> is the <cod
 <div class="highlight"><pre><span></span><code>$ gpg --keyring secring.gpg --export-secret-key XXXXXXXX &gt; ~/.gnupg/secring.gpg
 </code></pre></div>
 
-<h2 id="cutting-a-release">Cutting a Release<a class="headerlink" href="#cutting-a-release" title="Permanent link">&para;</a></h2>
+<h2 id="cutting-a-jvm-release">Cutting a JVM Release<a class="headerlink" href="#cutting-a-jvm-release" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Update <code>CHANGELOG.md</code>.</p>
@@ -583,6 +610,30 @@ git push &amp;&amp; git push --tags
 
 </li>
 </ol>
+<h2 id="publishing-the-swift-cocoapods">Publishing the Swift CocoaPods<a class="headerlink" href="#publishing-the-swift-cocoapods" title="Permanent link">&para;</a></h2>
+<p>There are two Podspecs to publish to CocoaPods: the Swift Wire runtime and the Swift Wire compiler. The same version number should be used for both.</p>
+<p>CocoaPods are published to the <a href="https://blog.cocoapods.org/CocoaPods-Trunk/">trunk</a> repo, which is the main public repo for all CocoaPods. If you have not published Wire before then you&rsquo;ll need to <a href="https://guides.cocoapods.org/making/getting-setup-with-trunk.html">get set up to publish to trunk</a>, and be added as a publisher for the Wire Podspecs.</p>
+<h3 id="setting-the-version">Setting the Version<a class="headerlink" href="#setting-the-version" title="Permanent link">&para;</a></h3>
+<p>When publishing a new version, two things must be done:
+1. The version must be tagged in Git. So if you&rsquo;re publishing version <code>4.0.0-alpha1</code>, then you&rsquo;d check out the SHA you want to publish and run:
+<div class="highlight"><pre><span></span><code>git tag 4.0.0-alpha1
+git push origin refs/tags/4.0.0-alpha1
+</code></pre></div></p>
+<ol>
+<li>The version being published needs to be passed into the Podspecs. This is done by setting the <code>POD_VERSION</code> environment variable:
+<div class="highlight"><pre><span></span><code>export POD_VERSION=4.0.0-alpha1
+</code></pre></div></li>
+</ol>
+<p>If publishing a release version (like <code>4.0.0</code> rather than <code>4.0.0-alpha1</code>) then setting the <code>POD_VERSION</code> is optional and it will be pulled automatically from <code>wire-library/gradle.properties</code>.</p>
+<h3 id="publishing-the-podspecs">Publishing the Podspecs<a class="headerlink" href="#publishing-the-podspecs" title="Permanent link">&para;</a></h3>
+<p>After setting the version as described above, you can publish the two Podspecs by doing:</p>
+<div class="highlight"><pre><span></span><code># Tests are currently failing, thus --skip-tests is required
+pod trunk push Wire.podspec --skip-tests
+</code></pre></div>
+
+<p>and</p>
+<div class="highlight"><pre><span></span><code>pod trunk push WireCompiler.podspec
+</code></pre></div>
                 
               
               

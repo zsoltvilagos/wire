@@ -961,7 +961,7 @@ that only the true sources are included – proto messages that are pruned or no
 included in the output artifact.</p>
 <h2 id="customizing-output">Customizing Output<a class="headerlink" href="#customizing-output" title="Permanent link">&para;</a></h2>
 <h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
-<p>Here&rsquo;s an exhaustive Java configuration. Booleans are shown with their non-default behavior.</p>
+<p>Here&rsquo;s an exhaustive Java configuration. Booleans are shown with their default behavior.</p>
 <div class="highlight"><pre><span></span><code><span class="n">wire</span> <span class="o">{</span>
   <span class="n">java</span> <span class="o">{</span>
     <span class="c1">// Proto types to include generated sources for. Types listed here will be</span>
@@ -981,33 +981,32 @@ included in the output artifact.</p>
     <span class="c1">// True if types emitted for this target should not also be emitted for other</span>
     <span class="c1">// targets. Use this to cause multiple outputs to be emitted for the same input</span>
     <span class="c1">// type.</span>
-    <span class="n">exclusive</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="n">exclusive</span> <span class="o">=</span> <span class="kc">true</span>
 
     <span class="c1">// Directory to emit to.</span>
     <span class="n">out</span> <span class="s2">&quot;${buildDir}/custom&quot;</span>
 
     <span class="c1">// True for emitted types to implement android.os.Parcelable.</span>
-    <span class="n">android</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">android</span> <span class="o">=</span> <span class="kc">false</span>
 
     <span class="c1">// True to enable the androidx.annotation.Nullable annotation where applicable.</span>
-    <span class="n">androidAnnotations</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">androidAnnotations</span> <span class="o">=</span> <span class="kc">false</span>
 
     <span class="c1">// True to emit code that uses reflection for reading, writing, and toString</span>
     <span class="c1">// methods which are normally implemented with generated code.</span>
-    <span class="n">compact</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">compact</span> <span class="o">=</span> <span class="kc">false</span>
 
     <span class="c1">// True to emit types for options declared on messages, fields, etc.</span>
-    <span class="n">emitDeclaredOptions</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
+    <span class="n">emitDeclaredOptions</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
 
     <span class="c1">// True to emit annotations for options applied on messages, fields, etc.</span>
-    <span class="n">emitAppliedOptions</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">emitAppliedOptions</span> <span class="o">=</span> <span class="kc">false</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 
 <h3 id="kotlin">Kotlin<a class="headerlink" href="#kotlin" title="Permanent link">&para;</a></h3>
-<p>Here&rsquo;s an exhaustive Kotlin configuration. Booleans and enums are shown with their non-default
-behavior.</p>
+<p>Here&rsquo;s an exhaustive Kotlin configuration. Booleans and enums are shown with their default behavior.</p>
 <div class="highlight"><pre><span></span><code><span class="n">wire</span> <span class="o">{</span>
   <span class="n">kotlin</span> <span class="o">{</span>
     <span class="c1">// Proto types to include generated sources for. Types listed here will be</span>
@@ -1027,23 +1026,23 @@ behavior.</p>
     <span class="c1">// True if types emitted for this target should not also be emitted for other</span>
     <span class="c1">// targets. Use this to cause multiple outputs to be emitted for the same input</span>
     <span class="c1">// type.</span>
-    <span class="n">exclusive</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="n">exclusive</span> <span class="o">=</span> <span class="kc">true</span>
 
     <span class="c1">// Directory to emit to.</span>
     <span class="n">out</span> <span class="s2">&quot;${buildDir}/custom&quot;</span>
 
     <span class="c1">// True for emitted types to implement android.os.Parcelable.</span>
-    <span class="n">android</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">android</span> <span class="o">=</span> <span class="kc">false</span>
 
     <span class="c1">// True for emitted types to implement APIs for easier migration from the Java</span>
     <span class="c1">// target.</span>
-    <span class="n">javaInterop</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">javaInterop</span> <span class="o">=</span> <span class="kc">false</span>
 
     <span class="c1">// True to emit types for options declared on messages, fields, etc.</span>
-    <span class="n">emitDeclaredOptions</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
+    <span class="n">emitDeclaredOptions</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
 
     <span class="c1">// True to emit annotations for options applied on messages, fields, etc.</span>
-    <span class="n">emitAppliedOptions</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
+    <span class="n">emitAppliedOptions</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
 
     <span class="c1">// `suspending` to generate coroutines APIs that require a Kotlin coroutines context.</span>
     <span class="c1">// `blocking` to generate blocking APIs callable by Java and Kotlin.</span>
@@ -1054,8 +1053,12 @@ behavior.</p>
     <span class="c1">// `none` to not generate services.</span>
     <span class="n">rpcRole</span> <span class="o">=</span> <span class="s1">&#39;server&#39;</span>
 
+    <span class="c1">// If set, the value will be appended to generated service type names. If null, their rpcRole</span>
+    <span class="c1">// will be used as a suffix instead.</span>
+    <span class="n">nameSuffix</span> <span class="o">=</span> <span class="s2">&quot;Suffix&quot;</span>
+
     <span class="c1">// True for emitted services to implement one interface per RPC.</span>
-    <span class="n">singleMethodServices</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">singleMethodServices</span> <span class="o">=</span> <span class="kc">false</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -1085,7 +1088,7 @@ implementation. Note that this interface is subject to change.</p>
 </code></pre></div>
 
 <p>Next configure the Wire plugin to call your custom handler. Here&rsquo;s an exhaustive custom
-configuration. Booleans and enums are shown with their non-default behavior.</p>
+configuration. Booleans and enums are shown with their default behavior.</p>
 <div class="highlight"><pre><span></span><code><span class="n">wire</span> <span class="o">{</span>
   <span class="n">custom</span> <span class="o">{</span>
    <span class="c1">// The name of a Java class to generate code with. This class must:</span>
@@ -1098,7 +1101,7 @@ configuration. Booleans and enums are shown with their non-default behavior.</p>
    <span class="c1">// These options work the same as the java and kotlin targets above.</span>
    <span class="n">includes</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;com.example.pizza.*&#39;</span><span class="o">]</span>
    <span class="n">excludes</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;com.example.sales.*&#39;</span><span class="o">]</span>
-   <span class="n">exclusive</span> <span class="o">=</span> <span class="kc">false</span>
+   <span class="n">exclusive</span> <span class="o">=</span> <span class="kc">true</span>
    <span class="n">out</span> <span class="s2">&quot;${buildDir}/custom&quot;</span>
   <span class="o">}</span>
 <span class="o">}</span>
