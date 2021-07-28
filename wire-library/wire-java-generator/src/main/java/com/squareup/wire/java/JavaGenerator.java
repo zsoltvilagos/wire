@@ -81,6 +81,7 @@ import javax.annotation.Nullable;
 import okio.ByteString;
 
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.squareup.wire.internal.Internal.makeTag;
 import static com.squareup.wire.internal._PlatformKt.camelCase;
 import static com.squareup.wire.schema.Options.ENUM_OPTIONS;
 import static com.squareup.wire.schema.Options.FIELD_OPTIONS;
@@ -429,6 +430,32 @@ public final class JavaGenerator {
       }
     }
     return result.build();
+  }
+
+  private FieldEncoding fieldEncoding(ProtoType type) {
+    if (type == ProtoType.FIXED64
+        || type == ProtoType.SFIXED64
+        || type == ProtoType.DOUBLE) {
+      return FieldEncoding.FIXED64;
+
+    } else if (type == ProtoType.FIXED32
+        || type == ProtoType.SFIXED32
+        || type == ProtoType.FLOAT) {
+      return FieldEncoding.FIXED32;
+
+    } else if (type == ProtoType.STRING
+        || type == ProtoType.BYTES) {
+      return FieldEncoding.LENGTH_DELIMITED;
+
+    } else if (type.isScalar()) {
+      return FieldEncoding.VARINT;
+
+    } else if (isEnum(type)) {
+      return FieldEncoding.VARINT;
+
+    } else {
+      return FieldEncoding.LENGTH_DELIMITED;
+    }
   }
 
   private CodeBlock adapterFor(Field field, NameAllocator nameAllocator) {
@@ -1077,6 +1104,100 @@ public final class JavaGenerator {
       result.addCode(encodeCall);
     }
 
+    return result.build();
+  }
+
+  private MethodSpec messageAdapterEncode2(NameAllocator nameAllocator, MessageType type,
+      TypeName javaType, boolean useBuilder, boolean reverse) {
+    nameAllocator = nameAllocator.clone();
+    String writer = nameAllocator.newName("writer");
+    String value = nameAllocator.newName("value");
+
+    MethodSpec.Builder result = MethodSpec.methodBuilder("encode")
+        .addAnnotation(Override.class)
+        .addModifiers(PUBLIC)
+        .addParameter(reverse ? ReverseProtoWriter.class : ProtoWriter.class, writer)
+        .addParameter(javaType, value)
+        .addException(IOException.class);
+
+    List<CodeBlock> encodeCalls = new ArrayList<>();
+
+    for (Field field : type.getFieldsAndOneOfFields()) {
+      int fieldTag = field.getTag();
+      CodeBlock adapter = adapterFor(field, nameAllocator);
+      String fieldName = nameAllocator.get(field);
+      CodeBlock fieldValue = useBuilder
+          ? CodeBlock.of("$N.$L", value, fieldName)
+          : CodeBlock.of("$L($N)", fieldName, value);
+      CodeBlock.Builder encodeCall = CodeBlock.builder();
+      boolean decomposeCalls = reverse && (field.getEncodeMode() == Field.EncodeMode.NULL_IF_ABSENT
+          || field.getEncodeMode() == Field.EncodeMode.REQUIRED
+          || field.getEncodeMode() == Field.EncodeMode.OMIT_IDENTITY);
+
+      if (decomposeCalls) {
+        String localName = nameAllocator.get(field);
+        encodeCall.addStatement("$T $N = $L", fieldType(field), localName, fieldValue);
+        fieldValue = CodeBlock.of("$L", localName);
+      }
+
+      if (field.getEncodeMode() == Field.EncodeMode.OMIT_IDENTITY) {
+        encodeCall.beginControlFlow("if (!$T.equals($L, $L))",
+            ClassName.get(Objects.class), fieldValue, identityValue(field));
+      } else if (decomposeCalls && field.getEncodeMode() == Field.EncodeMode.NULL_IF_ABSENT) {
+        encodeCall.beginControlFlow("if ($L != null)", fieldValue);
+      }
+
+      FieldEncoding fieldEncoding = fieldEncoding(field.getType());
+      if (decomposeCalls) {
+        if (fieldEncoding == FieldEncoding.LENGTH_DELIMITED) {
+          encodeCall.addStatement("$L.encodeWithSize($N, $L)", adapter, writer, fieldValue);
+        } else {
+          encodeCall.addStatement("$L.encode($N, $L)", adapter, writer, fieldValue);
+        }
+        encodeCall.add(writeVarint32(writer,
+            makeTag(fieldTag, fieldEncoding), "makeTag($L, $L)", fieldTag, fieldEncoding));
+      } else {
+        encodeCall.addStatement("$L.encodeWithTag($N, $L, $L)",
+            adapter, writer, fieldTag, fieldValue);
+      }
+
+      if (field.getEncodeMode() == Field.EncodeMode.OMIT_IDENTITY
+          || (decomposeCalls && field.getEncodeMode() == Field.EncodeMode.NULL_IF_ABSENT)) {
+        encodeCall.endControlFlow();
+      }
+
+      encodeCalls.add(encodeCall.build());
+    }
+
+    if (useBuilder) {
+      encodeCalls.add(CodeBlock.builder()
+          .addStatement("$N.writeBytes($N.unknownFields())", writer, value)
+          .build());
+    }
+
+    if (reverse) {
+      Collections.reverse(encodeCalls);
+    }
+
+    for (CodeBlock encodeCall : encodeCalls) {
+      result.addCode(encodeCall);
+    }
+
+    return result.build();
+  }
+
+  /** Emit code equivalent to {@code writer.writeVarint32(value)} but potentially faster. */
+  private CodeBlock writeVarint32(
+      String writer, int value, String commentFormat, Object... commentArgs) {
+    CodeBlock.Builder result = CodeBlock.builder();
+    result.add("$N.writeBytes(", writer);
+    while ((value & ~0x7f) != 0) {
+      result.add("$L, ", (value & 0x7f) | 0x80);
+      value = value >>> 7;
+    }
+    result.add("$L); // ", value);
+    result.add(commentFormat, commentArgs);
+    result.add("\n");
     return result.build();
   }
 

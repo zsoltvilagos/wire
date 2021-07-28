@@ -110,6 +110,9 @@ expect abstract class ProtoAdapter<E>(
   @Throws(IOException::class)
   open fun encodeWithTag(writer: ReverseProtoWriter, tag: Int, value: E?)
 
+  /** Write `value` to `writer` preceded by its size. */
+  open fun encodeWithSize(writer: ReverseProtoWriter, value: E)
+
   /** Encode `value` and write it to `stream`. */
   @Throws(IOException::class)
   fun encode(sink: BufferedSink, value: E)
@@ -260,6 +263,16 @@ internal inline fun <E> ProtoAdapter<E>.commonEncodeWithTag(
     encode(writer, value)
   }
   writer.writeTag(tag, fieldEncoding)
+}
+
+@Suppress("NOTHING_TO_INLINE")
+internal inline fun <E> ProtoAdapter<E>.commonEncodeWithSize(
+  writer: ReverseProtoWriter,
+  value: E
+) {
+  val byteCountBefore = writer.byteCount
+  encode(writer, value)
+  writer.writeVarint32(writer.byteCount - byteCountBefore)
 }
 
 @Suppress("NOTHING_TO_INLINE")

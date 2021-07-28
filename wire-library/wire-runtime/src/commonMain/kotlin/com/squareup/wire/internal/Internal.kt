@@ -18,7 +18,9 @@
 
 package com.squareup.wire.internal
 
+import com.squareup.wire.FieldEncoding
 import com.squareup.wire.ProtoAdapter
+import com.squareup.wire.ProtoReader
 import kotlin.jvm.JvmMultifileClass
 import kotlin.jvm.JvmName
 
@@ -220,4 +222,9 @@ fun boxedOneOfKeyFieldName(oneOfName: String, fieldName: String): String {
 /** Maps [oneOfName] to the companion object field of type `Set` containing the eligible keys.  */
 fun boxedOneOfKeysFieldName(oneOfName: String): String {
   return "${oneOfName}_keys".toUpperCase()
+}
+
+/** Makes a tag value given a field number and wire type. */
+fun makeTag(fieldNumber: Int, fieldEncoding: FieldEncoding): Int {
+  return (fieldNumber shl ProtoReader.TAG_FIELD_ENCODING_BITS) or fieldEncoding.value
 }

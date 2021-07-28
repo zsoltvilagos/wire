@@ -18,6 +18,7 @@ package com.squareup.wire
 import com.squareup.wire.ProtoWriter.Companion.varint32Size
 import com.squareup.wire.ProtoWriter.Companion.varint64Size
 import com.squareup.wire.internal.Throws
+import com.squareup.wire.internal.makeTag
 import okio.Buffer
 import okio.BufferedSink
 import okio.ByteString
@@ -202,10 +203,25 @@ class ReverseProtoWriter {
     }
   }
 
-  /** Encode and write a tag.  */
+  /** Encode and write a tag. */
   @Throws(IOException::class)
   fun writeTag(fieldNumber: Int, fieldEncoding: FieldEncoding) {
-    writeVarint32(ProtoWriter.makeTag(fieldNumber, fieldEncoding))
+    writeVarint32(makeTag(fieldNumber, fieldEncoding))
+  }
+
+  /** Encode and write [b1]. */
+  @Throws(IOException::class)
+  fun writeBytes(b1: Int) {
+    require(1)
+    array[--arrayLimit] = b1.toByte()
+  }
+
+  /** Encode and write [b1] and [b2]. */
+  @Throws(IOException::class)
+  fun writeBytes(b1: Int, b2: Int) {
+    require(2)
+    array[--arrayLimit] = b2.toByte()
+    array[--arrayLimit] = b1.toByte()
   }
 
   /** Write an `int32` field to the stream.  */

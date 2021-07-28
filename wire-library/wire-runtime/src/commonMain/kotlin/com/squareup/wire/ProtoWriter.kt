@@ -50,6 +50,7 @@ package com.squareup.wire
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import com.squareup.wire.internal.Throws
+import com.squareup.wire.internal.makeTag
 import okio.BufferedSink
 import okio.ByteString
 import okio.IOException
@@ -124,12 +125,6 @@ class ProtoWriter(private val sink: BufferedSink) {
   }
 
   companion object {
-
-    /** Makes a tag value given a field number and wire type. */
-    internal fun makeTag(fieldNumber: Int, fieldEncoding: FieldEncoding): Int {
-      return (fieldNumber shl ProtoReader.TAG_FIELD_ENCODING_BITS) or fieldEncoding.value
-    }
-
     /** Compute the number of bytes that would be needed to encode a tag. */
     internal fun tagSize(tag: Int): Int = varint32Size(makeTag(tag, FieldEncoding.VARINT))
 

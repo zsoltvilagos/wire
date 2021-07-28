@@ -102,6 +102,11 @@ actual abstract class ProtoAdapter<E> actual constructor(
   }
 
   @Throws(IOException::class)
+  actual open fun encodeWithSize(writer: ReverseProtoWriter, value: E) {
+    commonEncodeWithSize(writer, value)
+  }
+
+  @Throws(IOException::class)
   actual fun encode(sink: BufferedSink, value: E) {
     commonEncode(sink, value)
   }

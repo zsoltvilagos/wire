@@ -73,6 +73,11 @@ actual abstract class ProtoAdapter<E> actual constructor(
     commonEncodeWithTag(writer, tag, value)
   }
 
+  /** Write `value` to `writer` preceded by its size. */
+  actual open fun encodeWithSize(writer: ReverseProtoWriter, value: E) {
+    commonEncodeWithSize(writer, value)
+  }
+
   /** Encode `value` and write it to `stream`. */
   actual fun encode(sink: BufferedSink, value: E) {
     commonEncode(sink, value)
