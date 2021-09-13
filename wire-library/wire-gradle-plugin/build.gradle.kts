@@ -14,6 +14,8 @@ gradlePlugin {
     create("wire") {
       id = "com.squareup.wire"
       implementationClass = "com.squareup.wire.gradle.WirePlugin"
+      displayName = "Wire"
+      description = "generate code from .proto files"
     }
   }
 }
@@ -74,14 +76,6 @@ val test by tasks.getting(Test::class) {
   // Fixtures run in a separate JVM, routing properties from the VM running the build into test VM.
   systemProperty("kjs", System.getProperty("kjs"))
   systemProperty("knative", System.getProperty("knative"))
-}
-
-// The plugin marker artifacts don't conform to Maven Central's requirements. Disable publishing
-// them until we fix that. https://docs.gradle.org/current/userguide/plugins.html#sec:plugin_markers
-tasks.withType<AbstractPublishToMaven>().configureEach {
-  if (name == "publishWirePluginMarkerMavenPublicationToMavenCentralRepository") {
-    enabled = false
-  }
 }
 
 configure<MavenPublishBaseExtension> {
