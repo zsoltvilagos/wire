@@ -602,7 +602,9 @@ public final class ProtoParserTest {
     assertThat(ProtoParser.parse(location, proto)).isEqualTo(expected);
   }
 
-  @Test public void proto3MessageFieldsForbidOptional() throws Exception {
+  // TODO - Change to assert that these are allowed
+  /*
+  @Test public void proto3MessageFieldsOptional() throws Exception {
     String proto = ""
         + "syntax = \"proto3\";\n"
         + "message Message {\n"
@@ -616,6 +618,7 @@ public final class ProtoParserTest {
           + "'optional' label forbidden in proto3 field declarations");
     }
   }
+  */
 
   @Test public void proto3MessageFieldsForbidRequired() throws Exception {
     String proto = ""
@@ -632,6 +635,8 @@ public final class ProtoParserTest {
     }
   }
 
+  // TODO - Change to assert that these are allowed
+  /*
   @Test public void proto3ExtensionFieldsForbidsOptional() throws Exception {
     String proto = ""
         + "syntax = \"proto3\";\n"
@@ -648,6 +653,7 @@ public final class ProtoParserTest {
           + "'optional' label forbidden in proto3 field declarations");
     }
   }
+  */
 
   @Test public void proto3ExtensionFieldsForbidsRequired() throws Exception {
     String proto = ""
