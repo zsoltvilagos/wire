@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -14,8 +12,9 @@
       
         <meta name="author" content="Square, Inc.">
       
-      <link rel="shortcut icon" href="../../../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      
+      <link rel="icon" href="../../../images/icon-square.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -23,22 +22,24 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4dd2dd8d.min.css">
-      
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.6a5ad368.min.css">
-      
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
       
         
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
-        <meta name="theme-color" content="#2094f3">
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -47,6 +48,8 @@
     
     
       
+
+
     
     
   </head>
@@ -55,8 +58,12 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="white">
   
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -73,47 +80,57 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../../.." title="Wire" class="md-header-nav__button md-logo" aria-label="Wire">
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Wire" class="md-header__button md-logo" aria-label="Wire" data-md-component="logo">
       
   <img src="../../../images/icon-square.png" alt="logo">
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Wire
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               wire-runtime
             
           </span>
         </div>
-      
+      </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -129,12 +146,12 @@
 </div>
     
     
-      <div class="md-header-nav__source">
+      <div class="md-header__source">
         
-<a href="https://github.com/square/wire/" title="Go to repository" class="md-source">
+<a href="https://github.com/square/wire/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     Wire
@@ -143,25 +160,30 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
+      
         
-      
-      
+          
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Wire" class="md-nav__button md-logo" aria-label="Wire">
+    <a href="../../.." title="Wire" class="md-nav__button md-logo" aria-label="Wire" data-md-component="logo">
       
   <img src="../../../images/icon-square.png" alt="logo">
 
@@ -171,10 +193,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/square/wire/" title="Go to repository" class="md-source">
+<a href="https://github.com/square/wire/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     Wire
@@ -188,48 +210,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../wire_compiler/" title="Gradle Plugin" class="md-nav__link">
-      Gradle Plugin
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../wire_grpc/" title="gRPC" class="md-nav__link">
-      gRPC
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="https://stackoverflow.com/questions/tagged/square-wire?sort=active" title="Stack Overflow ⏏" class="md-nav__link">
-      Stack Overflow ⏏
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
@@ -237,253 +226,323 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
-    
-    <label class="md-nav__link" for="nav-5">
-      3.x API
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="3.x API" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon"></span>
-        3.x API
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wire-grpc-client/com.squareup.wire/" title="wire-grpc-client" class="md-nav__link">
-      wire-grpc-client
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wire-moshi-adapter/com.squareup.wire/" title="wire-moshi-adapter" class="md-nav__link">
-      wire-moshi-adapter
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wire_compiler/" class="md-nav__link">
+        Gradle Plugin
+      </a>
+    </li>
   
 
+    
+      
+      
+      
 
-  <li class="md-nav__item md-nav__item--active">
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wire_grpc/" class="md-nav__link">
+        gRPC
+      </a>
+    </li>
+  
+
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://stackoverflow.com/questions/tagged/square-wire?sort=active" class="md-nav__link">
+        Stack Overflow ⏏
+      </a>
+    </li>
+  
+
     
+      
+      
+      
+
+  
+  
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3.x API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3.x API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3.x API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wire-grpc-client/com.squareup.wire/" class="md-nav__link">
+        wire-grpc-client
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wire-moshi-adapter/com.squareup.wire/" class="md-nav__link">
+        wire-moshi-adapter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          wire-runtime
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         wire-runtime
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="wire-runtime" class="md-nav__link md-nav__link--active">
-      wire-runtime
-    </a>
-    
+      </a>
       
+        
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
+  
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#package-comsquareupwire" class="md-nav__link">
-    Package com.squareup.wire
-  </a>
-  
-    <nav class="md-nav" aria-label="Package com.squareup.wire">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#types" class="md-nav__link">
     Types
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-aliases" class="md-nav__link">
-    Type Aliases
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#functions" class="md-nav__link">
     Functions
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
     </ul>
   
 </nav>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
       
-      
-      
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      2.x API
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="2.x API" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon"></span>
-        2.x API
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+            
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          2.x API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2.x API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          2.x API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://square.github.io/wire/2.x/wire-gson-support/" class="md-nav__link">
+        wire-gson-support ⏏
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://square.github.io/wire/2.x/wire-runtime/" class="md-nav__link">
+        wire-runtime ⏏
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="https://square.github.io/wire/2.x/wire-gson-support/" title="wire-gson-support ⏏" class="md-nav__link">
-      wire-gson-support ⏏
-    </a>
-  </li>
-
-        
+            
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://square.github.io/wire/2.x/wire-runtime/" title="wire-runtime ⏏" class="md-nav__link">
-      wire-runtime ⏏
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../../wire_json/" title="JSON" class="md-nav__link">
-      JSON
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../wire_vs_protoc/" title="Wire vs Protoc" class="md-nav__link">
-      Wire vs Protoc
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wire_json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../../changelog/" title="Change Log" class="md-nav__link">
-      Change Log
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../contributing/" title="Contributing" class="md-nav__link">
-      Contributing
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wire_vs_protoc/" class="md-nav__link">
+        Wire vs Protoc
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../../code_of_conduct/" title="Code of Conduct" class="md-nav__link">
-      Code of Conduct
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="https://developers.google.com/protocol-buffers/docs/proto" title="Protocol Buffers ⏏" class="md-nav__link">
-      Protocol Buffers ⏏
-    </a>
-  </li>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code_of_conduct/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/protocol-buffers/docs/proto" class="md-nav__link">
+        Protocol Buffers ⏏
+      </a>
+    </li>
+  
 
     
   </ul>
@@ -493,58 +552,37 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
+  
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#package-comsquareupwire" class="md-nav__link">
-    Package com.squareup.wire
-  </a>
-  
-    <nav class="md-nav" aria-label="Package com.squareup.wire">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#types" class="md-nav__link">
     Types
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-aliases" class="md-nav__link">
-    Type Aliases
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#functions" class="md-nav__link">
     Functions
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -556,7 +594,7 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -565,14 +603,9 @@
                   </a>
                 
                 
-                  
-                
-                
-                  <h1>wire-runtime</h1>
-                
-                <p><a href="../">wire-runtime</a> / <a href="./">com.squareup.wire</a></p>
-<h2 id="package-comsquareupwire">Package com.squareup.wire<a class="headerlink" href="#package-comsquareupwire" title="Permanent link">&para;</a></h2>
-<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+                <p>//<a href="../../">wire-runtime</a>/<a href="./">com.squareup.wire</a></p>
+<h1 id="package-comsquareupwire">Package com.squareup.wire<a class="headerlink" href="#package-comsquareupwire" title="Permanent link">&para;</a></h1>
+<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -582,99 +615,92 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-android-message/">AndroidMessage</a><br>(JVM)</td>
-<td><code>abstract class AndroidMessage&lt;M :</code><a href="-message/"><code>Message</code></a><code>&lt;</code><a href="-android-message/#M"><code>M</code></a><code>,</code><a href="-android-message/#B"><code>B</code></a><code>&gt;, B :</code><a href="-message/-builder/"><code>Builder</code></a><code>&lt;</code><a href="-android-message/#M"><code>M</code></a><code>,</code><a href="-android-message/#B"><code>B</code></a><code>&gt;&gt; :</code><a href="-message/"><code>Message</code></a><code>&lt;</code><a href="-android-message/#M"><code>M</code></a><code>,</code><a href="-android-message/#B"><code>B</code></a><code>&gt;</code><br>An Android-specific <a href="-message/">Message</a> which adds support for <a href="#">Parcelable</a>.</td>
+<td><a href="-android-message/">AndroidMessage</a></td>
+<td>[jvm]<br>abstract class <a href="-android-message/">AndroidMessage</a>&lt;<a href="-android-message/">M</a> : <a href="-message/">Message</a>&lt;<a href="-android-message/">M</a>, <a href="-android-message/">B</a>&gt;, <a href="-android-message/">B</a> : <a href="-message/-builder/">Message.Builder</a>&lt;<a href="-android-message/">M</a>, <a href="-android-message/">B</a>&gt;&gt; : <a href="-message/">Message</a>&lt;<a href="-android-message/">M</a>, <a href="-android-message/">B</a>&gt; , Parcelable<br>An Android-specific <a href="-message/">Message</a> which adds support for Parcelable.</td>
 </tr>
 <tr>
 <td><a href="-any-message/">AnyMessage</a></td>
-<td><code>class AnyMessage :</code><a href="-message/"><code>Message</code></a><code>&lt;</code><a href="-any-message/"><code>AnyMessage</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html"><code>Nothing</code></a><code>&gt;</code><br>Wire implementation of the <code>google.protobuf.Any</code> type. The <code>Any</code> type wraps an arbitrary protobuf message. Field of <code>Any</code> generated by Wire will be typed <a href="-any-message/">AnyMessage</a>. <a href="-any-message/type-url/">typeUrl</a> is used to identify the type of the message, defined as &lsquo;type.googleapis.com/full.type.name&rsquo;. <a href="-any-message/value/">value</a> is the serialized representation of the wrapped message. The <a href="-any-message/pack/">pack</a> and <a href="-any-message/unpack/">unpack</a> methods are available to wrap and unwrap an <code>Any</code> message.</td>
+<td>[common]<br>class <a href="-any-message/">AnyMessage</a>(typeUrl: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, value: ByteString) : <a href="-message/">Message</a>&lt;<a href="-any-message/">AnyMessage</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html">Nothing</a>&gt; <br>Wire implementation of the google.protobuf.Any type. The Any type wraps an arbitrary protobuf message. Field of Any generated by Wire will be typed <a href="-any-message/">AnyMessage</a>. <a href="-any-message/type-url/">typeUrl</a> is used to identify the type of the message, defined as &lsquo;type.googleapis.com/full.type.name&rsquo;. <a href="-any-message/value/">value</a> is the serialized representation of the wrapped message. The <a href="-any-message/-companion/pack/">pack</a> and <a href="-any-message/unpack/">unpack</a> methods are available to wrap and unwrap an Any message.</td>
 </tr>
 <tr>
 <td><a href="-duration/">Duration</a></td>
-<td><code>expect class Duration</code><br>A measurement of time. Durations may be positive, zero, or negative.</td>
+<td>[common]<br>class <a href="-duration/">Duration</a><br>A measurement of time. Durations may be positive, zero, or negative.<br>[js, native, jvm]<br>[js, native]<br>class <a href="-duration/">Duration</a><br>[jvm]<br>typealias <a href="-duration/">Duration</a> = <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a></td>
 </tr>
 <tr>
-<td><a href="-enum-adapter/">EnumAdapter</a><br>(JVM, js, native)</td>
-<td><code>abstract expect class EnumAdapter&lt;E :</code><a href="-wire-enum/"><code>WireEnum</code></a><code>&gt; :</code><a href="-proto-adapter/"><code>ProtoAdapter</code></a><code>&lt;</code><a href="-enum-adapter/#E"><code>E</code></a><code>&gt;</code><br>An abstract <a href="-proto-adapter/">ProtoAdapter</a> that converts values of an enum to and from integers.</td>
+<td><a href="-enum-adapter/">EnumAdapter</a></td>
+<td>[common, js, jvm, native]<br>[common]<br>abstract class <a href="-enum-adapter/">EnumAdapter</a>&lt;<a href="-enum-adapter/">E</a> : <a href="-wire-enum/">WireEnum</a>&gt; : <a href="-proto-adapter/">ProtoAdapter</a>&lt;<a href="-enum-adapter/">E</a>&gt; <br>[js, jvm, native]<br>abstract class <a href="-enum-adapter/">EnumAdapter</a>&lt;<a href="-enum-adapter/">E</a> : WireEnum&gt; : <a href="-proto-adapter/">ProtoAdapter</a>&lt;<a href="-enum-adapter/">E</a>&gt; <br>An abstract <a href="-proto-adapter/">ProtoAdapter</a> that converts values of an enum to and from integers.</td>
 </tr>
 <tr>
 <td><a href="-field-encoding/">FieldEncoding</a></td>
-<td><code>enum class FieldEncoding</code></td>
+<td>[common]<br>enum <a href="-field-encoding/">FieldEncoding</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a>&lt;<a href="-field-encoding/">FieldEncoding</a>&gt;</td>
 </tr>
 <tr>
 <td><a href="-instant/">Instant</a></td>
-<td><code>expect class Instant</code><br>This represents a timestamp, though we use the name &lsquo;instant&rsquo; in the runtime because that&rsquo;s what the JVM libraries use, and &lsquo;Timestamp&rsquo; means something else on that platform.</td>
+<td>[common]<br>class <a href="-instant/">Instant</a><br>This represents a timestamp, though we use the name &lsquo;instant&rsquo; in the runtime because that&rsquo;s what the JVM libraries use, and &lsquo;Timestamp&rsquo; means something else on that platform.<br>[js, native, jvm]<br>[js, native]<br>class <a href="-instant/">Instant</a><br>[jvm]<br>typealias <a href="-instant/">Instant</a> = <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a></td>
 </tr>
 <tr>
-<td><a href="-message/">Message</a><br>(JVM, js, native)</td>
-<td><code>abstract expect class Message&lt;M :</code><a href="-message/"><code>Message</code></a><code>&lt;</code><a href="-message/#M"><code>M</code></a><code>,</code><a href="-message/#B"><code>B</code></a><code>&gt;, B :</code><a href="-message/-builder/"><code>Builder</code></a><code>&lt;</code><a href="-message/#M"><code>M</code></a><code>,</code><a href="-message/#B"><code>B</code></a><code>&gt;&gt;</code><br>A protocol buffer message.</td>
+<td><a href="-message/">Message</a></td>
+<td>[common, js, jvm, native]<br>[common, js, native]<br>abstract class <a href="-message/">Message</a>&lt;<a href="-message/">M</a> : <a href="-message/">Message</a>&lt;<a href="-message/">M</a>, <a href="-message/">B</a>&gt;, <a href="-message/">B</a> : <a href="-message/-builder/">Message.Builder</a>&lt;<a href="-message/">M</a>, <a href="-message/">B</a>&gt;&gt;<br>[jvm]<br>abstract class <a href="-message/">Message</a>&lt;<a href="-message/">M</a> : <a href="-message/">Message</a>&lt;<a href="-message/">M</a>, <a href="-message/">B</a>&gt;, <a href="-message/">B</a> : <a href="-message/-builder/">Message.Builder</a>&lt;<a href="-message/">M</a>, <a href="-message/">B</a>&gt;&gt; : <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a><br>A protocol buffer message.</td>
 </tr>
 <tr>
-<td><a href="-message-sink/">MessageSink</a><br>(JVM, js, native)</td>
-<td><code>expect interface MessageSink&lt;in T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><br>A writable stream of messages.</td>
+<td><a href="-message-sink/">MessageSink</a></td>
+<td>[common]<br>interface <a href="-message-sink/">MessageSink</a>&lt;in <a href="-message-sink/">T</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt;<br>A writable stream of messages.<br>[js, jvm, native]<br>[js, native]<br>interface <a href="-message-sink/">MessageSink</a>&lt;in <a href="-message-sink/">T</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt;<br>[jvm]<br>interface <a href="-message-sink/">MessageSink</a>&lt;in <a href="-message-sink/">T</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt; : <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html">Closeable</a></td>
 </tr>
 <tr>
-<td><a href="-message-source/">MessageSource</a><br>(JVM, js, native)</td>
-<td><code>expect interface MessageSource&lt;out T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><br>A readable stream of messages.</td>
+<td><a href="-message-source/">MessageSource</a></td>
+<td>[common]<br>interface <a href="-message-source/">MessageSource</a>&lt;out <a href="-message-source/">T</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt;<br>A readable stream of messages.<br>[js, jvm, native]<br>[js, native]<br>interface <a href="-message-source/">MessageSource</a>&lt;out <a href="-message-source/">T</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt;<br>[jvm]<br>interface <a href="-message-source/">MessageSource</a>&lt;out <a href="-message-source/">T</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt; : <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html">Closeable</a></td>
 </tr>
 <tr>
 <td><a href="-one-of/">OneOf</a></td>
-<td><code>data class OneOf&lt;out K :</code><a href="-one-of/-key/"><code>Key</code></a><code>&lt;</code><a href="-one-of/#T"><code>T</code></a><code>&gt;, T&gt;</code><br>A oneof&rsquo;s value and the key that identifies which field holds it.</td>
+<td>[common]<br>data class <a href="-one-of/">OneOf</a>&lt;out <a href="-one-of/">K</a> : <a href="-one-of/-key/">OneOf.Key</a>&lt;<a href="-one-of/">T</a>&gt;, <a href="-one-of/">T</a>&gt;(key: <a href="-one-of/">K</a>, value: <a href="-one-of/">T</a>)<br>A oneof&rsquo;s value and the key that identifies which field holds it.</td>
 </tr>
 <tr>
-<td><a href="-proto-adapter/">ProtoAdapter</a><br>(JVM, js, native)</td>
-<td><code>abstract expect class ProtoAdapter&lt;E&gt;</code></td>
+<td><a href="-proto-adapter/">ProtoAdapter</a></td>
+<td>[common, js, jvm, native]<br>[common]<br>abstract class <a href="-proto-adapter/">ProtoAdapter</a>&lt;<a href="-proto-adapter/">E</a>&gt;(fieldEncoding: <a href="-field-encoding/">FieldEncoding</a>, type: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;?, typeUrl: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>?, syntax: <a href="-syntax/">Syntax</a>, identity: <a href="-proto-adapter/">E</a>?, sourceFile: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>?)<br>[js, jvm, native]<br>abstract class <a href="-proto-adapter/">ProtoAdapter</a>&lt;<a href="-proto-adapter/">E</a>&gt;(fieldEncoding: FieldEncoding, type: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;</em>&gt;?, typeUrl: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>?, syntax: Syntax, identity: <a href="-proto-adapter/">E</a>?, sourceFile: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>?)</td>
 </tr>
 <tr>
 <td><a href="-proto-reader/">ProtoReader</a></td>
-<td><code>class ProtoReader</code><br>Reads and decodes protocol message fields.</td>
+<td>[common]<br>class <a href="-proto-reader/">ProtoReader</a>(source: BufferedSource)<br>Reads and decodes protocol message fields.</td>
 </tr>
 <tr>
 <td><a href="-proto-writer/">ProtoWriter</a></td>
-<td><code>class ProtoWriter</code><br>Utilities for encoding and writing protocol message fields.</td>
+<td>[common]<br>class <a href="-proto-writer/">ProtoWriter</a>(sink: BufferedSink)<br>Utilities for encoding and writing protocol message fields.</td>
 </tr>
 <tr>
-<td><a href="-runtime-enum-adapter/">RuntimeEnumAdapter</a><br>(JVM)</td>
-<td><code>class RuntimeEnumAdapter&lt;E&gt; :</code><a href="-enum-adapter/"><code>EnumAdapter</code></a><code>&lt;</code><a href="-runtime-enum-adapter/#E"><code>E</code></a><code>&gt;</code><br>Converts values of an enum to and from integers using reflection.</td>
+<td><a href="-reverse-proto-writer/">ReverseProtoWriter</a></td>
+<td>[common]<br>class <a href="-reverse-proto-writer/">ReverseProtoWriter</a><br>Encodes protocol buffer message fields from back-to-front for efficiency. Callers should write data in the opposite order that the data will be read.</td>
+</tr>
+<tr>
+<td><a href="-runtime-enum-adapter/">RuntimeEnumAdapter</a></td>
+<td>[jvm]<br>class <a href="-runtime-enum-adapter/">RuntimeEnumAdapter</a>&lt;<a href="-runtime-enum-adapter/">E</a> : WireEnum&gt; : <a href="-enum-adapter/">EnumAdapter</a>&lt;<a href="-runtime-enum-adapter/">E</a>&gt; <br>Converts values of an enum to and from integers using reflection.</td>
 </tr>
 <tr>
 <td><a href="-service/">Service</a></td>
-<td><code>interface Service</code></td>
+<td>[common]<br>interface <a href="-service/">Service</a></td>
 </tr>
 <tr>
 <td><a href="-syntax/">Syntax</a></td>
-<td><code>enum class Syntax</code><br>Syntax version.</td>
+<td>[common]<br>enum <a href="-syntax/">Syntax</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a>&lt;<a href="-syntax/">Syntax</a>&gt; <br>Syntax version.</td>
 </tr>
 <tr>
 <td><a href="-wire-enum/">WireEnum</a></td>
-<td><code>interface WireEnum</code><br>Interface for generated <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a> values to help serialization and deserialization.</td>
+<td>[common]<br>interface <a href="-wire-enum/">WireEnum</a><br>Interface for generated <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a> values to help serialization and deserialization.</td>
 </tr>
-</tbody>
-</table>
-<h3 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td><a href="-wire-enum-constant/">WireEnumConstant</a></td>
-<td><code>annotation class WireEnumConstant</code><br>Annotates generated <a href="-wire-enum/">WireEnum</a> fields with metadata for serialization and deserialization.</td>
+<td>[common]<br>@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html">Target</a>(allowedTargets = [<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-i-e-l-d/index.html">AnnotationTarget.FIELD</a>])<br>annotation class <a href="-wire-enum-constant/">WireEnumConstant</a>(declaredName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>)<br>Annotates generated <a href="-wire-enum/">WireEnum</a> fields with metadata for serialization and deserialization.</td>
 </tr>
 <tr>
 <td><a href="-wire-field/">WireField</a></td>
-<td><code>annotation class WireField</code><br>Annotates generated <a href="-message/">Message</a> fields with metadata for serialization and deserialization.</td>
+<td>[common]<br>@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html">Target</a>(allowedTargets = [<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-i-e-l-d/index.html">AnnotationTarget.FIELD</a>])<br>annotation class <a href="-wire-field/">WireField</a>(tag: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, keyAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, adapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, label: <a href="-wire-field/-label/">WireField.Label</a>, redacted: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>, declaredName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, jsonName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, oneofName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>)<br>Annotates generated <a href="-message/">Message</a> fields with metadata for serialization and deserialization.</td>
 </tr>
 <tr>
 <td><a href="-wire-rpc/">WireRpc</a></td>
-<td><code>annotation class WireRpc</code><br>For gRPC actions the path is formatted as <code>/&lt;service name&gt;/&lt;method name&gt;</code>. The path of the proto service below is <code>/squareup.helloworld.Greeter/SayHello</code>.</td>
+<td>[common]<br>@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html">Target</a>(allowedTargets = [<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-u-n-c-t-i-o-n/index.html">AnnotationTarget.FUNCTION</a>])<br>annotation class <a href="-wire-rpc/">WireRpc</a>(path: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, requestAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, responseAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, sourceFile: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>)<br>For gRPC actions the path is formatted as /&lt;service name&gt;/&lt;method name&gt;. The path of the proto service below is /squareup.helloworld.Greeter/SayHello.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="type-aliases">Type Aliases<a class="headerlink" href="#type-aliases" title="Permanent link">&para;</a></h3>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -684,35 +710,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-duration/">Duration</a><br>(JVM)</td>
-<td><code>actual typealias Duration =</code><a href="http://docs.oracle.com/javase/8/docs/api/java/time/Duration.html"><code>Duration</code></a></td>
+<td><a href="decode/">decode</a></td>
+<td>[darwin]<br>fun &lt;<a href="decode/">E</a>&gt; <a href="-proto-adapter/#-1395866391%2FExtensions%2F2045859631">ProtoAdapter</a>&lt;<a href="decode/">E</a>&gt;.<a href="decode/">decode</a>(data: &lt;ERROR CLASS&gt;): <a href="decode/">E</a><br>Read an encoded message from data.</td>
 </tr>
 <tr>
-<td><a href="-instant/">Instant</a><br>(JVM)</td>
-<td><code>actual typealias Instant =</code><a href="http://docs.oracle.com/javase/8/docs/api/java/time/Instant.html"><code>Instant</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="duration-of-seconds/">durationOfSeconds</a><br>(JVM, js, native)</td>
-<td><code>expect fun durationOfSeconds(seconds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, nano:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="-duration/"><code>Duration</code></a></td>
+<td><a href="duration-of-seconds/">durationOfSeconds</a></td>
+<td>[common, js, jvm, native]<br>[common, js, native]<br>fun <a href="duration-of-seconds/">durationOfSeconds</a>(seconds: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>, nano: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>): <a href="-duration/">Duration</a><br>[jvm]<br>inline fun <a href="duration-of-seconds/">durationOfSeconds</a>(seconds: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>, nano: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>): <a href="-duration/">Duration</a></td>
 </tr>
 <tr>
-<td><a href="get/">get</a><br>(JVM)</td>
-<td><code>fun &lt;T&gt; get(value:</code><a href="get/#T"><code>T</code></a><code>?, defaultValue:</code><a href="get/#T"><code>T</code></a><code>):</code><a href="get/#T"><code>T</code></a><br>Returns <code>value</code> if it is not null; <code>defaultValue</code> otherwise. This is used to conveniently return a default value when a value is null. For example,</td>
+<td><a href="get/">get</a></td>
+<td>[jvm]<br>fun &lt;<a href="get/">T</a>&gt; <a href="get/">get</a>(value: <a href="get/">T</a>?, defaultValue: <a href="get/">T</a>): <a href="get/">T</a><br>Returns value if it is not null; defaultValue otherwise. This is used to conveniently return a default value when a value is null. For example,</td>
 </tr>
 <tr>
-<td><a href="of-epoch-second/">ofEpochSecond</a><br>(JVM, js, native)</td>
-<td><code>expect fun ofEpochSecond(epochSecond:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, nano:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="-instant/"><code>Instant</code></a></td>
+<td><a href="of-epoch-second/">ofEpochSecond</a></td>
+<td>[common, js, jvm, native]<br>[common, js, native]<br>fun <a href="of-epoch-second/">ofEpochSecond</a>(epochSecond: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>, nano: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>): <a href="-instant/">Instant</a><br>[jvm]<br>inline fun <a href="of-epoch-second/">ofEpochSecond</a>(epochSecond: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>, nano: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a>): <a href="-instant/">Instant</a></td>
 </tr>
 </tbody>
 </table>
@@ -726,45 +737,46 @@
             </article>
           </div>
         </div>
+        
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
         
-          <a href="../../wire-moshi-adapter/com.squareup.wire/" title="wire-moshi-adapter" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <a href="../../wire-moshi-adapter/com.squareup.wire/" class="md-footer__link md-footer__link--prev" aria-label="Previous: wire-moshi-adapter" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              wire-moshi-adapter
             </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                wire-moshi-adapter
-              </div>
-            </div>
-          </a>
+          </div>
+        </a>
+      
+      
         
-        
-          <a href="../../../wire_json/" title="JSON" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                JSON
-              </div>
+        <a href="../../../wire_json/" class="md-footer__link md-footer__link--next" aria-label="Next: JSON" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              JSON
             </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -774,10 +786,13 @@
             Copyright &copy; 2019 Square, Inc.
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
       </div>
       
     </div>
@@ -785,19 +800,13 @@
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
-      <script src="../../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

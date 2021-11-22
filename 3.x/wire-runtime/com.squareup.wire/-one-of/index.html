@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -14,8 +12,9 @@
       
         <meta name="author" content="Square, Inc.">
       
-      <link rel="shortcut icon" href="../../../../images/icon-square.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      
+      <link rel="icon" href="../../../../images/icon-square.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -23,22 +22,24 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4dd2dd8d.min.css">
-      
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.6a5ad368.min.css">
-      
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.a57b2b03.min.css">
       
         
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
-        <meta name="theme-color" content="#2094f3">
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -47,6 +48,8 @@
     
     
       
+
+
     
     
   </head>
@@ -55,8 +58,12 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="white">
   
+    
+    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -73,47 +80,57 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../../../.." title="Wire" class="md-header-nav__button md-logo" aria-label="Wire">
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Wire" class="md-header__button md-logo" aria-label="Wire" data-md-component="logo">
       
   <img src="../../../../images/icon-square.png" alt="logo">
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Wire
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Index
             
           </span>
         </div>
-      
+      </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -129,12 +146,12 @@
 </div>
     
     
-      <div class="md-header-nav__source">
+      <div class="md-header__source">
         
-<a href="https://github.com/square/wire/" title="Go to repository" class="md-source">
+<a href="https://github.com/square/wire/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     Wire
@@ -143,25 +160,30 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
+      
         
-      
-      
+          
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Wire" class="md-nav__button md-logo" aria-label="Wire">
+    <a href="../../../.." title="Wire" class="md-nav__button md-logo" aria-label="Wire" data-md-component="logo">
       
   <img src="../../../../images/icon-square.png" alt="logo">
 
@@ -171,10 +193,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/square/wire/" title="Go to repository" class="md-source">
+<a href="https://github.com/square/wire/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     Wire
@@ -188,232 +210,288 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../../.." title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../wire_compiler/" title="Gradle Plugin" class="md-nav__link">
-      Gradle Plugin
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../../../wire_grpc/" title="gRPC" class="md-nav__link">
-      gRPC
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="https://stackoverflow.com/questions/tagged/square-wire?sort=active" title="Stack Overflow ⏏" class="md-nav__link">
-      Stack Overflow ⏏
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../wire_compiler/" class="md-nav__link">
+        Gradle Plugin
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      3.x API
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="3.x API" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon"></span>
-        3.x API
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../wire-grpc-client/com.squareup.wire/" title="wire-grpc-client" class="md-nav__link">
-      wire-grpc-client
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../wire-moshi-adapter/com.squareup.wire/" title="wire-moshi-adapter" class="md-nav__link">
-      wire-moshi-adapter
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../" title="wire-runtime" class="md-nav__link">
-      wire-runtime
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../wire_grpc/" class="md-nav__link">
+        gRPC
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://stackoverflow.com/questions/tagged/square-wire?sort=active" class="md-nav__link">
+        Stack Overflow ⏏
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      
+      
+      
+
+  
+  
+  
     
-    <label class="md-nav__link" for="nav-6">
-      2.x API
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="2.x API" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon"></span>
-        2.x API
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3.x API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3.x API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3.x API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wire-grpc-client/com.squareup.wire/" class="md-nav__link">
+        wire-grpc-client
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wire-moshi-adapter/com.squareup.wire/" class="md-nav__link">
+        wire-moshi-adapter
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        wire-runtime
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="https://square.github.io/wire/2.x/wire-gson-support/" title="wire-gson-support ⏏" class="md-nav__link">
-      wire-gson-support ⏏
-    </a>
-  </li>
-
-        
+            
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          2.x API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2.x API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          2.x API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://square.github.io/wire/2.x/wire-gson-support/" class="md-nav__link">
+        wire-gson-support ⏏
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://square.github.io/wire/2.x/wire-runtime/" class="md-nav__link">
+        wire-runtime ⏏
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="https://square.github.io/wire/2.x/wire-runtime/" title="wire-runtime ⏏" class="md-nav__link">
-      wire-runtime ⏏
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../wire_json/" title="JSON" class="md-nav__link">
-      JSON
-    </a>
-  </li>
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../../../wire_vs_protoc/" title="Wire vs Protoc" class="md-nav__link">
-      Wire vs Protoc
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../changelog/" title="Change Log" class="md-nav__link">
-      Change Log
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../wire_json/" class="md-nav__link">
+        JSON
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../../../contributing/" title="Contributing" class="md-nav__link">
-      Contributing
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../../code_of_conduct/" title="Code of Conduct" class="md-nav__link">
-      Code of Conduct
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../wire_vs_protoc/" class="md-nav__link">
+        Wire vs Protoc
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../changelog/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="https://developers.google.com/protocol-buffers/docs/proto" title="Protocol Buffers ⏏" class="md-nav__link">
-      Protocol Buffers ⏏
-    </a>
-  </li>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../code_of_conduct/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/protocol-buffers/docs/proto" class="md-nav__link">
+        Protocol Buffers ⏏
+      </a>
+    </li>
+  
 
     
   </ul>
@@ -423,11 +501,15 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -437,14 +519,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    Types
-  </a>
-  
-</li>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#constructors" class="md-nav__link">
@@ -454,8 +529,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
+  <a href="#types" class="md-nav__link">
+    Types
   </a>
   
 </li>
@@ -463,6 +538,13 @@
         <li class="md-nav__item">
   <a href="#functions" class="md-nav__link">
     Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
   </a>
   
 </li>
@@ -475,7 +557,7 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -484,75 +566,67 @@
                   </a>
                 
                 
-                  
-                
-                
-                <p><a href="../../">wire-runtime</a> / <a href="../">com.squareup.wire</a> / <a href="./">OneOf</a></p>
+                <p>//<a href="../../../">wire-runtime</a>/<a href="../">com.squareup.wire</a>/<a href="./">OneOf</a></p>
 <h1 id="oneof">OneOf<a class="headerlink" href="#oneof" title="Permanent link">&para;</a></h1>
-<p><code>data class OneOf&lt;out K :</code><a href="-key/"><code>Key</code></a><code>&lt;</code><a href="./#T"><code>T</code></a><code>&gt;, T&gt;</code></p>
+<p>[common]\
+data class <a href="./">OneOf</a>&lt;out <a href="./">K</a> : <a href="-key/">OneOf.Key</a>&lt;<a href="./">T</a>&gt;, <a href="./">T</a>&gt;(key: <a href="./">K</a>, value: <a href="./">T</a>)</p>
 <p>A oneof&rsquo;s value and the key that identifies which field holds it.</p>
-<p>Wire has two different mechanisms for generating <code>oneof</code> code: “boxed” that uses this class,
-and “flat” where all oneof fields are defined inline in the declaring message.</p>
+<p>Wire has two different mechanisms for generating oneof code: “boxed” that uses this class, and “flat” where all oneof fields are defined inline in the declaring message.</p>
 <p>Flat oneofs</p>
-<p>This is Wire&rsquo;s default mechanism. Each oneof field in the schema yields a field in the generated
-Kotlin or Java class. At most one field has a non-null value, and callers need to manually probe
-each field until they find the non-null value.</p>
+<hr />
+<p>This is Wire&rsquo;s default mechanism. Each oneof field in the schema yields a field in the generated Kotlin or Java class. At most one field has a non-null value, and callers need to manually probe each field until they find the non-null value.</p>
 <p>This is well-suited to oneofs with a small number of choices (less than 5).</p>
 <p>Boxed oneofs</p>
-<p>In this mechanism the generated class has one field that holds an instance of this. It has both
-a key that identifies which field is populated, and its value. If no field is set, then the
-OneOf box is null.</p>
-<p>This is well-suited to oneofs with a large number of choices (5 or more). This mechanism is
-necessary for oneofs with a very large number of options because in the other form the
-generated code may exceed the JVM&rsquo;s method size limits.</p>
-<p>Opt-in to boxed oneofs in your build by setting the <code>boxOneOfsMinSize</code> option. OneOfs with this
-many fields or more will be generated in this form.</p>
-<div class="highlight"><pre><span></span><code>wire {
-  kotlin {
-    boxOneOfsMinSize = 10
-  }
-}
-</code></pre></div>
-
+<hr />
+<p>In this mechanism the generated class has one field that holds an instance of this. It has both a key that identifies which field is populated, and its value. If no field is set, then the OneOf box is null.</p>
+<p>This is well-suited to oneofs with a large number of choices (5 or more). This mechanism is necessary for oneofs with a very large number of options because in the other form the generated code may exceed the JVM&rsquo;s method size limits.</p>
+<p>Opt-in to boxed oneofs in your build by setting the boxOneOfsMinSize option. OneOfs with this many fields or more will be generated in this form.</p>
+<p>wire {\
+  kotlin {\
+    boxOneOfsMinSize = 10\
+  }\
+}</p>
 <p>Using Boxed oneofs</p>
-<p>One challenge in using oneofs is coping with data from different schema versions that offer
-new unknown choices. For example, a client may receive a message from a server that sets a
-oneof field the client doesn&rsquo;t know about; or a server may read an archived message with a
-oneof field that has since been deleted.</p>
-<p>In either case, the oneof will be null! There is no way to differentiate between unset and set
-to an unknown field. Please keep this in mind when writing code to handle oneofs.</p>
-<p>In this example the address type may be absent (no value was ever set) or its type may be too
-new for the current code to understand. This code returns a default value:</p>
-<div class="highlight"><pre><span></span><code>val buttonLabel = when (contact.address?.key) {
-  Contact.addressSmsNumber -&gt; &quot;Send SMS&quot;
-  Contact.addressEmailAddress -&gt; &quot;Send Email&quot;
-  else -&gt; &quot;Address Type Unknown or Unset&quot;
-}
-</code></pre></div>
-
-<p>Another approach is to crash. In this case applications need to be careful to avoid receiving
-data with an incompatible schema.</p>
-<div class="highlight"><pre><span></span><code>val buttonLabel = when (contact.address?.key) {
-  Contact.addressSmsNumber -&gt; &quot;Send SMS&quot;
-  Contact.addressEmailAddress -&gt; &quot;Send Email&quot;
-  else -&gt; throw IllegalStateException(&quot;unknown address!&quot;)
-}
-</code></pre></div>
-
+<hr />
+<p>One challenge in using oneofs is coping with data from different schema versions that offer new unknown choices. For example, a client may receive a message from a server that sets a oneof field the client doesn&rsquo;t know about; or a server may read an archived message with a oneof field that has since been deleted.</p>
+<p>In either case, the oneof will be null! There is no way to differentiate between unset and set to an unknown field. Please keep this in mind when writing code to handle oneofs.</p>
+<p>In this example the address type may be absent (no value was ever set) or its type may be too new for the current code to understand. This code returns a default value:</p>
+<p>val buttonLabel = when (contact.address?.key) {\
+  Contact.addressSmsNumber -&gt; &ldquo;Send SMS&rdquo;\
+  Contact.addressEmailAddress -&gt; &ldquo;Send Email&rdquo;\
+  else -&gt; &ldquo;Address Type Unknown or Unset&rdquo;\
+}</p>
+<p>Another approach is to crash. In this case applications need to be careful to avoid receiving data with an incompatible schema.</p>
+<p>val buttonLabel = when (contact.address?.key) {\
+  Contact.addressSmsNumber -&gt; &ldquo;Send SMS&rdquo;\
+  Contact.addressEmailAddress -&gt; &ldquo;Send Email&rdquo;\
+  else -&gt; throw IllegalStateException(&ldquo;unknown address!&rdquo;)\
+}</p>
 <p>Consider AnyMessage</p>
-<p>New schemas should consider <a href="../-any-message/">google.protobuf.Any</a> instead of <code>oneof</code>.</p>
-<p>Benefits of <code>Any</code>:</p>
-<ul>
-<li>No build-time dependency from the referencing type on the referenced type.</li>
-<li>Add new types without changing the schema</li>
-</ul>
-<p>Benefits of <code>OneOf</code>:</p>
-<ul>
-<li>More compact on-the-wire encoding. Approximately 1 byte of overhead for <code>OneOf</code> vs. <code>32</code> for
-    the message name in an <code>Any</code>.</li>
-<li>All choices are cataloged a central place in the schema.</li>
-</ul>
-<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<hr />
+<p>New schemas should consider <a href="../-any-message/">google.protobuf.Any</a> instead of oneof.</p>
+<p>Benefits of Any:</p>
+<ul><li>No build-time dependency from the referencing type on the referenced type.</li><li>Add new types without changing the schema</li></ul>
+
+<p>Benefits of OneOf:</p>
+<ul><li>More compact on-the-wire encoding. Approximately 1 byte of overhead for OneOf vs. 32 for     the message name in an Any.</li><li>All choices are cataloged a central place in the schema.</li></ul>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="-one-of/">OneOf</a></td>
+<td>[common]<br>fun &lt;out <a href="./">K</a> : <a href="-key/">OneOf.Key</a>&lt;<a href="./">T</a>&gt;, <a href="./">T</a>&gt; <a href="-one-of/">OneOf</a>(key: <a href="./">K</a>, value: <a href="./">T</a>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -563,11 +637,11 @@ data with an incompatible schema.</p>
 <tbody>
 <tr>
 <td><a href="-key/">Key</a></td>
-<td><code>abstract class Key&lt;T&gt;</code><br>Identifies a field in a OneOf. Typically subclasses are generated by the Wire compiler and instances are declared as members of the referencing message class.</td>
+<td>[common]<br>abstract class <a href="-key/">Key</a>&lt;<a href="-key/">T</a>&gt;(tag: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, adapter: <a href="../-proto-adapter/">ProtoAdapter</a>&lt;<a href="-key/">T</a>&gt;, declaredName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, redacted: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>, jsonName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>)<br>Identifies a field in a OneOf. Typically subclasses are generated by the Wire compiler and instances are declared as members of the referencing message class.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -577,12 +651,24 @@ data with an incompatible schema.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>OneOf(key:</code><a href="./#K"><code>K</code></a><code>, value:</code><a href="./#T"><code>T</code></a><code>)</code><br>A oneof&rsquo;s value and the key that identifies which field holds it.</td>
+<td><a href="encoded-size-with-tag/">encodedSizeWithTag</a></td>
+<td>[common]<br>fun <a href="encoded-size-with-tag/">encodedSizeWithTag</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></td>
+</tr>
+<tr>
+<td><a href="encode-with-tag/">encodeWithTag</a></td>
+<td>[common]<br>fun <a href="encode-with-tag/">encodeWithTag</a>(writer: <a href="../-proto-writer/">ProtoWriter</a>)<br>fun <a href="encode-with-tag/">encodeWithTag</a>(writer: <a href="../-reverse-proto-writer/">ReverseProtoWriter</a>)</td>
+</tr>
+<tr>
+<td><a href="get-or-null/">getOrNull</a></td>
+<td>[common]<br>fun &lt;<a href="get-or-null/">X</a>&gt; <a href="get-or-null/">getOrNull</a>(key: <a href="-key/">OneOf.Key</a>&lt;<a href="get-or-null/">X</a>&gt;): <a href="get-or-null/">X</a>?</td>
+</tr>
+<tr>
+<td><a href="to-string/">toString</a></td>
+<td>[common]<br>open override fun <a href="to-string/">toString</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -593,38 +679,11 @@ data with an incompatible schema.</p>
 <tbody>
 <tr>
 <td><a href="key/">key</a></td>
-<td><code>val key:</code><a href="./#K"><code>K</code></a></td>
+<td>[common]<br>val <a href="key/">key</a>: <a href="./">K</a></td>
 </tr>
 <tr>
 <td><a href="value/">value</a></td>
-<td><code>val value:</code><a href="./#T"><code>T</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="encode-with-tag/">encodeWithTag</a></td>
-<td><code>fun encodeWithTag(writer:</code><a href="../-proto-writer/"><code>ProtoWriter</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
-</tr>
-<tr>
-<td><a href="encoded-size-with-tag/">encodedSizeWithTag</a></td>
-<td><code>fun encodedSizeWithTag():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
-</tr>
-<tr>
-<td><a href="get-or-null/">getOrNull</a></td>
-<td><code>fun &lt;X&gt; getOrNull(key:</code><a href="-key/"><code>Key</code></a><code>&lt;</code><a href="get-or-null/#X"><code>X</code></a><code>&gt;):</code><a href="get-or-null/#X"><code>X</code></a><code>?</code></td>
-</tr>
-<tr>
-<td><a href="to-string/">toString</a></td>
-<td><code>fun toString():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
+<td>[common]<br>val <a href="value/">value</a>: <a href="./">T</a></td>
 </tr>
 </tbody>
 </table>
@@ -638,6 +697,7 @@ data with an incompatible schema.</p>
             </article>
           </div>
         </div>
+        
       </main>
       
         
@@ -651,10 +711,13 @@ data with an incompatible schema.</p>
             Copyright &copy; 2019 Square, Inc.
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
       </div>
       
     </div>
@@ -662,19 +725,13 @@ data with an incompatible schema.</p>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
-      <script src="../../../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../../../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../../../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../../../assets/javascripts/worker/search.5eca75d3.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../../../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
