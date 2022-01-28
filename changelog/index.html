@@ -575,6 +575,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-410" class="md-nav__link">
+    Version 4.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-401" class="md-nav__link">
     Version 4.0.1
   </a>
@@ -1086,6 +1093,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-410" class="md-nav__link">
+    Version 4.1.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-401" class="md-nav__link">
     Version 4.0.1
   </a>
@@ -1534,6 +1548,18 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-410">Version 4.1.0<a class="headerlink" href="#version-410" title="Permanent link">&para;</a></h2>
+<p><em>2022-01-28</em></p>
+<ul>
+<li>New: When using Wire JSON factories, you can now override the proto3 behavior of skipping default
+   values when writing JSON. Set <code>writeIdentityValues</code> to true for either <code>WireJsonAdapterFactory</code>
+   or <code>WireTypeAdapterFactory</code> to enable it.</li>
+<li>Breaking: WireLogger methods has been refactored to remove platform dependencies and allow more
+   precise callbacks. We might add new methods in the future for better logging still.</li>
+<li>Removal: The <code>dry-run</code> option on <code>WireCompiler</code> has been removed.</li>
+<li>Swift: WireCompiler podspec is now backup by a jar so consumers will not have to locally build it
+    on <code>pod install</code>.</li>
+</ul>
 <h2 id="version-401">Version 4.0.1<a class="headerlink" href="#version-401" title="Permanent link">&para;</a></h2>
 <p><em>2021-12-07</em></p>
 <ul>

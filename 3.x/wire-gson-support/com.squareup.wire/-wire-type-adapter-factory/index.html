@@ -653,12 +653,13 @@
                 <p>//<a href="../../../">wire-gson-support</a>/<a href="../">com.squareup.wire</a>/<a href="./">WireTypeAdapterFactory</a></p>
 <h1 id="wiretypeadapterfactory">WireTypeAdapterFactory<a class="headerlink" href="#wiretypeadapterfactory" title="Permanent link">&para;</a></h1>
 <p>[jvm]\
-class <a href="./">WireTypeAdapterFactory</a>(typeUrlToAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, ProtoAdapter&lt;*&gt;&gt;) : TypeAdapterFactory</p>
+class <a href="./">WireTypeAdapterFactory</a>@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html">JvmOverloads</a>constructor(typeUrlToAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, ProtoAdapter&lt;*&gt;&gt;, writeIdentityValues: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>) : TypeAdapterFactory</p>
 <p>A TypeAdapterFactory that allows Wire messages to be serialized and deserialized using the GSON Json library. To create a Gson instance that works with Wire, use the com.google.gson.GsonBuilder interface:</p>
 <p>Gson gson = new GsonBuilder()\
     .registerTypeAdapterFactory(new WireTypeAdapterFactory())\
     .create();</p>
 <p>The resulting Gson instance will be able to serialize and deserialize any Wire Message type, including extensions and unknown field values. The JSON encoding is intended to be compatible with the <a href="https://code.google.com/p/protobuf-java-format/">protobuf-java-format</a> library. Note that version 1.2 of that API has a <a href="https://code.google.com/p/protobuf-java-format/issues/detail?id=47">bug</a> in the way it serializes unknown fields, so we use our own approach for this case.</p>
+<p>In Proto3, if a field is set to its default (or identity) value, it will be omitted in the JSON-encoded data. Set writeIdentityValues to true if you want Wire to always write values, including default ones.</p>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -670,11 +671,7 @@ class <a href="./">WireTypeAdapterFactory</a>(typeUrlToAdapter: <a href="https:/
 <tbody>
 <tr>
 <td><a href="-wire-type-adapter-factory/">WireTypeAdapterFactory</a></td>
-<td>[jvm]<br>fun <a href="-wire-type-adapter-factory/">WireTypeAdapterFactory</a>()</td>
-</tr>
-<tr>
-<td><a href="-wire-type-adapter-factory/">WireTypeAdapterFactory</a></td>
-<td>[jvm]<br>fun <a href="-wire-type-adapter-factory/">WireTypeAdapterFactory</a>(typeUrlToAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, ProtoAdapter&lt;*&gt;&gt;)</td>
+<td>[jvm]<br>@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html">JvmOverloads</a><br>fun <a href="-wire-type-adapter-factory/">WireTypeAdapterFactory</a>(typeUrlToAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, ProtoAdapter&lt;*&gt;&gt; = mapOf(), writeIdentityValues: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false)</td>
 </tr>
 </tbody>
 </table>

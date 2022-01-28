@@ -653,12 +653,13 @@
                 <p>//<a href="../../../">wire-moshi-adapter</a>/<a href="../">com.squareup.wire</a>/<a href="./">WireJsonAdapterFactory</a></p>
 <h1 id="wirejsonadapterfactory">WireJsonAdapterFactory<a class="headerlink" href="#wirejsonadapterfactory" title="Permanent link">&para;</a></h1>
 <p>[jvm]\
-class <a href="./">WireJsonAdapterFactory</a> : JsonAdapter.Factory</p>
+class <a href="./">WireJsonAdapterFactory</a>@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html">JvmOverloads</a>constructor(typeUrlToAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, ProtoAdapter&lt;*&gt;&gt;, writeIdentityValues: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>) : JsonAdapter.Factory</p>
 <p>A JsonAdapter.Factory that allows Wire messages to be serialized and deserialized using the Moshi Json library.</p>
 <p>Moshi moshi = new Moshi.Builder()\
     .add(new WireJsonAdapterFactory())\
     .build();</p>
 <p>The resulting Moshi instance will be able to serialize and deserialize Wire Message types, including extensions. It ignores unknown field values. The JSON encoding is intended to be compatible with the <a href="https://code.google.com/p/protobuf-java-format/">protobuf-java-format</a> library.</p>
+<p>In Proto3, if a field is set to its default (or identity) value, it will be omitted in the JSON-encoded data. Set writeIdentityValues to true if you want Wire to always write values, including default ones.</p>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -670,7 +671,7 @@ class <a href="./">WireJsonAdapterFactory</a> : JsonAdapter.Factory</p>
 <tbody>
 <tr>
 <td><a href="-wire-json-adapter-factory/">WireJsonAdapterFactory</a></td>
-<td>[jvm]<br>fun <a href="-wire-json-adapter-factory/">WireJsonAdapterFactory</a>()</td>
+<td>[jvm]<br>@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html">JvmOverloads</a><br>fun <a href="-wire-json-adapter-factory/">WireJsonAdapterFactory</a>(typeUrlToAdapter: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, ProtoAdapter&lt;*&gt;&gt; = mapOf(), writeIdentityValues: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false)</td>
 </tr>
 </tbody>
 </table>
