@@ -155,10 +155,10 @@ $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readDataTy
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readDataType/#kotlin.String/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-data-type.md
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readDocumentation/#/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-documentation.md
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readInt/#/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-int.md
-$dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readName/#/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-name.md
+$dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readName/#kotlin.Boolean/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-name.md
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readQuotedString/#/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-quoted-string.md
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readString/#/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-string.md
-$dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readWord/#/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-word.md
+$dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/readWord/#kotlin.Boolean/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/read-word.md
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/require/#kotlin.Char/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/require.md
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/tryAppendTrailingDocumentation/#kotlin.String/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/try-append-trailing-documentation.md
 $dokka.location:com.squareup.wire.schema.internal.parser/SyntaxReader/unexpected/#kotlin.String#com.squareup.wire.schema.Location?/PointingToDeclaration/wire-schema/com.squareup.wire.schema.internal.parser/-syntax-reader/unexpected.md
