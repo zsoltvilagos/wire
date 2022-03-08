@@ -12,7 +12,7 @@ object versions {
   val coroutines = "1.5.2"
   val dokka = "1.5.30"
   val errorprone = "2.0.21"
-  val grpc = "1.38.1"
+  val grpc = "1.44.0"
   val gson = "2.8.6"
   val guava = "20.0"
   val javapoet = "1.13.0"
@@ -25,7 +25,7 @@ object versions {
   val kotlinpoet = "1.9.0"
   val moshi = "1.12.0"
   val okhttp = "4.9.3"
-  val protobuf = "3.17.3"
+  val protobuf = "3.19.4"
   val protobufGradlePlugin = "0.8.16"
 }
 
