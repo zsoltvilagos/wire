@@ -569,6 +569,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-430" class="md-nav__link">
+    Version 4.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-420" class="md-nav__link">
     Version 4.2.0
   </a>
@@ -1100,6 +1107,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-430" class="md-nav__link">
+    Version 4.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-420" class="md-nav__link">
     Version 4.2.0
   </a>
@@ -1570,6 +1584,17 @@
 
 
 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-430">Version 4.3.0<a class="headerlink" href="#version-430" title="Permanent link">&para;</a></h2>
+<p><em>2022-03-24</em></p>
+<ul>
+<li>New: reserved tags and names in enum types are now honoured by Wire.</li>
+<li>Fix: <code>max</code> keyword is now correctly parsed for enum types.</li>
+<li>Fix: Wire now writes minus double zeros and minus float zeros on proto3.</li>
+<li>Fix: Wire doesn&rsquo;t write google wrappers types&rsquo; identity values anymore.</li>
+<li>Fix: <code>CoreLoader</code> correctly loads <code>.proto</code> files present in the resources of the project.</li>
+<li>Fix: Propagate <code>GrpcExceptions</code> in <code>GrpcCalls</code>.</li>
+<li>Fix: Change <code>GrpcCall.isCanceled</code> to honor OkHttp cancellations.</li>
+</ul>
 <h2 id="version-420">Version 4.2.0<a class="headerlink" href="#version-420" title="Permanent link">&para;</a></h2>
 <p><em>2022-02-17</em></p>
 <ul>
@@ -1593,7 +1618,7 @@
 <li>Fix: Print target name in <code>ConsoleWireLogger</code>.</li>
 <li>Fix: Throw early when field or constant names start with a digit.</li>
 <li>Update: Bumped SwiftPoet to <code>1.3.1</code>.</li>
-<li>Fix: Wire will not generate annotations for <code>repeated</code> options. </li>
+<li>Fix: Wire will not generate annotations for <code>repeated</code> options.</li>
 </ul>
 <h2 id="version-410">Version 4.1.0<a class="headerlink" href="#version-410" title="Permanent link">&para;</a></h2>
 <p><em>2022-01-28</em></p>
@@ -1971,9 +1996,9 @@ the repository.</p>
 <li>New: Experimental multiplatform runtime.</li>
 </ul>
 <p>Starting with this version, <code>wire-runtime</code> is published as a multiplatform Kotlin artifact. While
-   the JVM artifact is binary- and behavior-compatible with 3.0.0-alpha01, artifacts for other 
-   platforms may not work correctly at this point. The artifact name for the JVM artifact has been 
-   changed to <code>wire-runtime-jvm</code>: now, in order to depend on the multiplatform runtime, use the 
+   the JVM artifact is binary- and behavior-compatible with 3.0.0-alpha01, artifacts for other
+   platforms may not work correctly at this point. The artifact name for the JVM artifact has been
+   changed to <code>wire-runtime-jvm</code>: now, in order to depend on the multiplatform runtime, use the
    following Gradle dependency declaration:</p>
 <div class="highlight"><pre><span></span><code><span class="n">api</span> <span class="s2">&quot;com.squareup.wire:wire-runtime:3.0.0-alpha02&quot;</span>
 </code></pre></div>
@@ -1998,10 +2023,10 @@ the repository.</p>
 <ul>
 <li>New: Kotlin Generator</li>
 </ul>
-<p>Wire 3 can generate Kotlin data classes. To enable this feature via the command line API, pass in 
-   the <code>--kotlin_out</code> parameter that should specify the output directory for the generated <code>*.kt</code> 
-   files. </p>
-<p>Given the following simple proto:</p>
+<p>Wire 3 can generate Kotlin data classes. To enable this feature via the command line API, pass in
+   the <code>--kotlin_out</code> parameter that should specify the output directory for the generated <code>*.kt</code>
+   files.
+   Given the following simple proto:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">message</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">required</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="w">  </span><span class="k">required</span><span class="w"> </span><span class="kt">int32</span><span class="w"> </span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
@@ -2010,11 +2035,11 @@ the repository.</p>
 </code></pre></div>
 <p>the generated Kotlin code will look like the following:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">data</span> <span class="kd">class</span> <span class="nc">Person</span><span class="p">(</span>
-  <span class="nd">@field</span><span class="p">:</span><span class="n">WireField</span><span class="p">(</span><span class="n">tag</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="s">&quot;com.squareup.wire.ProtoAdapter#STRING&quot;</span><span class="p">)</span> 
+  <span class="nd">@field</span><span class="p">:</span><span class="n">WireField</span><span class="p">(</span><span class="n">tag</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="s">&quot;com.squareup.wire.ProtoAdapter#STRING&quot;</span><span class="p">)</span>
   <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-  <span class="nd">@field</span><span class="p">:</span><span class="n">WireField</span><span class="p">(</span><span class="n">tag</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="s">&quot;com.squareup.wire.ProtoAdapter#INT32&quot;</span><span class="p">)</span> 
+  <span class="nd">@field</span><span class="p">:</span><span class="n">WireField</span><span class="p">(</span><span class="n">tag</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="s">&quot;com.squareup.wire.ProtoAdapter#INT32&quot;</span><span class="p">)</span>
   <span class="kd">val</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-  <span class="nd">@field</span><span class="p">:</span><span class="n">WireField</span><span class="p">(</span><span class="n">tag</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="s">&quot;com.squareup.wire.ProtoAdapter#STRING&quot;</span><span class="p">)</span> 
+  <span class="nd">@field</span><span class="p">:</span><span class="n">WireField</span><span class="p">(</span><span class="n">tag</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="s">&quot;com.squareup.wire.ProtoAdapter#STRING&quot;</span><span class="p">)</span>
   <span class="kd">val</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String?</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
   <span class="kd">val</span> <span class="nv">unknownFields</span><span class="p">:</span> <span class="n">ByteString</span> <span class="o">=</span> <span class="n">ByteString</span><span class="p">.</span><span class="na">EMPTY</span>
 <span class="p">)</span> <span class="p">:</span> <span class="n">Message</span><span class="o">&lt;</span><span class="n">Person</span><span class="p">,</span> <span class="n">Person</span><span class="p">.</span><span class="na">Builder</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ADAPTER</span><span class="p">,</span> <span class="n">unknownFields</span><span class="p">)</span> <span class="p">{</span>
@@ -2022,8 +2047,8 @@ the repository.</p>
     <span class="nd">@JvmField</span>
     <span class="kd">val</span> <span class="nv">ADAPTER</span><span class="p">:</span> <span class="n">ProtoAdapter</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">...</span> <span class="c1">// code omitted for brevity</span>
 </code></pre></div>
-<p>The <code>copy()</code> method of a data class replaces most usages of the builder. If your code relies on 
-   the <code>Builder</code>, you can enable full <code>Builder</code> generation by passing the <code>--java_interop</code> parameter 
+<p>The <code>copy()</code> method of a data class replaces most usages of the builder. If your code relies on
+   the <code>Builder</code>, you can enable full <code>Builder</code> generation by passing the <code>--java_interop</code> parameter
    to the compiler.</p>
 <ul>
 <li>New: gRPC support</li>
@@ -2038,7 +2063,7 @@ the repository.</p>
 <span class="w">  </span><span class="c1">// A feature with an empty name is returned if there&#39;s no feature at the given</span>
 <span class="w">  </span><span class="c1">// position.</span>
 <span class="w">  </span><span class="k">rpc</span><span class="w"> </span><span class="n">GetFeature</span><span class="p">(</span><span class="n">Point</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">Feature</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
-<span class="p">}</span><span class="w">    </span>
+<span class="p">}</span>
 </code></pre></div>
 <p>The generated code will look like the following (message protos, referenced by the schema, are
    omitted):</p>
@@ -2079,10 +2104,10 @@ the repository.</p>
 <span class="o">}</span>
 </code></pre></div>
 <p>The <code>wire</code> extension introduces the concept of compilation targets, such as <code>kotlin</code> and <code>java</code>,
-   where each target has its own configuration properties. Multiple targets can be supplied, which 
+   where each target has its own configuration properties. Multiple targets can be supplied, which
    benefits use cases such as migrating Java protos to Kotlin.</p>
 <ul>
-<li>New: Decouple the option of using Android annotations for nullability from the option of having messages implement Parcelable. </li>
+<li>New: Decouple the option of using Android annotations for nullability from the option of having messages implement Parcelable.</li>
 <li>New: Wire Moshi adapter for serializing proto JSON representation using the Moshi library.</li>
 <li>New: Implement support for custom enum types.</li>
 <li>New: Generate AndroidX nullability annotations instead of old support library annotations.</li>
